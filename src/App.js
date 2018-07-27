@@ -2,18 +2,36 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MapContainer from './MapContainer'
+import SearchPlace from './SearchPlace'
+import Geocode from "react-geocode"
 
 class App extends Component {
+  state = {
+    locations: [],
+    markers: [],
+    keysAPI: {
+      'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
+    }
+  }
+
+  componentDidMount() {
+
+  }
+  addLocationsOnMap = (locations) => {
+
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
         <MapContainer
-          isMarkerShown={true}
+          isMarkerShown
+          addLocationsOnMap={this.addLocationsOnMap}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
         />
+        <SearchPlace />
       </div>
     );
   }
