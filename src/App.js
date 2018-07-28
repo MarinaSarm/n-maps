@@ -15,7 +15,6 @@ class App extends Component {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
     }
   }
-
   componentDidMount() {
     // place initial set of restaurants locations and markers to state
     const locations = Restaurants
@@ -30,14 +29,16 @@ class App extends Component {
     })
     this.setState({locations: locationState, markers: markerState})
   }
-
-  addLocationsOnMap = (locations) => {
-
+  addLocationsOnMap = (map) => {
+    let markers = this.state.markers
+    markers['map'] = map
+    this.setState({markers: markers})
   }
   render() {
     return (
       <div className="App">
         <MapContainer
+          isMarkerShown
           addLocationsOnMap={this.addLocationsOnMap}
           GoogleKey={this.state.keysAPI['GoogleMaps']}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
@@ -45,6 +46,7 @@ class App extends Component {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
           locations={this.state.locations}
+          markers={this.state.markers}
         />
         <SearchPlace />
       </div>
