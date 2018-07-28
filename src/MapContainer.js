@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps"
+import { GoogleMap, Marker, withGoogleMap, withScriptjs, InfoWindow } from "react-google-maps"
 import { compose } from 'recompose'
 
 /*
@@ -17,7 +17,13 @@ const MapContainer = compose(
         {/*
         *  show markers on map
         */}
-          {props.showingMarkers.map((marker) => <Marker key={marker.id} position={marker.position} />)}
+          {props.showingMarkers.map((marker) =>
+            <Marker key={marker.id} position={marker.position}>
+              <InfoWindow>
+                <h3>Info</h3>
+              </InfoWindow>
+            </Marker>
+          )}
         </GoogleMap>
 
     )

@@ -14,7 +14,8 @@ class App extends Component {
     showingLocations: [],
     showingMarkers: [],
     keysAPI: {
-      'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
+      'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
+      'YelpReviews': 'JqyqCkdIzkAOtbIdzpjj4_e127n38Y99fWz4N8XeaomfEr-SAgRwfEjxfdQZYAWvHqWPK72omnhUFl_zX0orvNrDBqLxPQByMhV1IkEPbhZlXm2Vj-Z28PmgJNBcW3Yx'
     }
   }
   componentDidMount() {
