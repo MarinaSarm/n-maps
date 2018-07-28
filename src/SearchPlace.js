@@ -8,11 +8,13 @@ class SearchPlace extends Component {
     query: ''
   }
   updateQuery = (query) => {
-    this.setState({ query: query.trim() })
+    this.setState({ query: query })
     let showingLocations = this.props.locations
-    if (this.state.query) {
-      const match = new RegExp(escapeRegExp(this.state.query), 'i');
+    if (query) {
+      const match = new RegExp(escapeRegExp(query), 'i')
       showingLocations = this.props.locations.filter((location) => match.test(location.location.name))
+    } else {
+      showingLocations = this.props.locations
     }
     this.props.updateShowingLocations(showingLocations)
   }
