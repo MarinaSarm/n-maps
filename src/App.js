@@ -39,26 +39,20 @@ class App extends Component {
     return (
       <div className="App">
         <MapContainer
-          addLocationsOnMap={this.addLocationsOnMap}
           GoogleKey={this.state.keysAPI['GoogleMaps']}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
+          containerElement={<div style={{ height: `80vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
-          locations={this.state.locations}
-          markers={this.state.markers}
           showingMarkers={this.state.showingMarkers}
         />
         <SearchPlace
           locations={this.state.locations}
           markers={this.state.markers}
-          showingLocations={this.state.showingLocations}
-          showingMarkers={this.state.showingMarkers}
           updateShowingLocations={this.updateShowingLocations}
         />
         <ListLocations
           showingLocations={this.state.showingLocations}
-          showingMarkers={this.state.showingMarkers}
         />
       </div>
     );
