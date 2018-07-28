@@ -8,15 +8,26 @@ class SearchPlace extends Component {
     query: ''
   }
   updateQuery = (query) => {
+    // hold the value of input field in state
     this.setState({ query: query })
     let showingLocations = this.props.locations
-    if (query) {
+    if (query.length > 0) {
       const match = new RegExp(escapeRegExp(query), 'i')
-      showingLocations = this.props.locations.filter((location) => match.test(location.location.name))
+      showingLocations = this.props.locations.filter((location) =>
+        match.test(location.location.name)
+      )
     } else {
+      // if no search, then show all
       showingLocations = this.props.locations
     }
-    this.props.updateShowingLocations(showingLocations)
+    // choose markers with the same id
+    let showingMarkers = showingLocations.map((location) => {
+      return this.props.markers.filter((marker) =>
+        marker.id === location.id
+      )[0]
+    })
+    // update state of app component
+    this.props.updateShowingLocations(showingLocations, showingMarkers)
   }
   render(){
     return(

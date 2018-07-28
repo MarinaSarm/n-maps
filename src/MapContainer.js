@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { GoogleMap, Marker, withGoogleMap, withScriptjs } from "react-google-maps"
 import { compose, withProps } from 'recompose'
 
@@ -13,8 +13,8 @@ const MapContainer = compose(
           defaultCenter={{ lat: 53.0793, lng: 8.8017}}
         >
         // show markers on map
-          {props.markers.map((marker) => <Marker key={marker.id} position={marker.position} />)}
-
+          {props.showingMarkers.map((marker) => <Marker key={marker.id} position={marker.position} />)}
+      
         </GoogleMap>
 
     )

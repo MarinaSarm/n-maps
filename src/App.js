@@ -12,6 +12,7 @@ class App extends Component {
     locations: [],
     markers: [],
     showingLocations: [],
+    showingMarkers: [],
     keysAPI: {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
     }
@@ -28,13 +29,10 @@ class App extends Component {
       locationState.push({location: location, id: markerId})
       markerState.push({position: markerLocation, title: markerTitle, id: markerId})
     })
-    this.setState({locations: locationState, markers: markerState, showingLocations: locationState})
+    this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
   }
-  addLocationsOnMap = () => {
-
-  }
-  updateShowingLocations = (showingLocations) => {
-    this.setState({showingLocations: showingLocations})
+  updateShowingLocations = (showingLocations, showingMarkers) => {
+    this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
   render() {
     return (
@@ -48,11 +46,13 @@ class App extends Component {
           mapElement={<div style={{ height: `100%` }} />}
           locations={this.state.locations}
           markers={this.state.markers}
+          showingMarkers={this.state.showingMarkers}
         />
         <SearchPlace
           locations={this.state.locations}
           markers={this.state.markers}
           showingLocations={this.state.showingLocations}
+          showingMarkers={this.state.showingMarkers}
           updateShowingLocations={this.updateShowingLocations}
         />
       </div>
