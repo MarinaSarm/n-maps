@@ -17,11 +17,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // place initial set of restaurants to state
+    // place initial set of restaurants locations and markers to state
     const locations = Restaurants
+    const locationState = []
+    const markerState = []
     locations.map((location) => {
-      this.state.locations.push(location)
+      let markerLocation = location.geometry.location
+      let markerTitle = location.name
+      let markerId = location.id
+      locationState.push({location: location, id: markerId})
+      markerState.push({position: markerLocation, title: markerTitle, id: markerId})
     })
+    this.setState({locations: locationState, markers: markerState})
   }
 
   addLocationsOnMap = (locations) => {
