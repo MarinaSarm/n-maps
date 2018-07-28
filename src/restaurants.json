@@ -1,0 +1,894 @@
+  [
+      {
+         "formatted_address" : "An der Reeperbahn 10, 28217 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.084487,
+               "lng" : 8.783479999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08591722989271,
+                  "lng" : 8.784943029892721
+               },
+               "southwest" : {
+                  "lat" : 53.08321757010727,
+                  "lng" : 8.782243370107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "e8fddfd12eee87ba6704679e8031ba5a861b69ae",
+         "name" : "Restaurant ELISA Bremen",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 639,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113648205329298276784/photos\"\u003eRestaurant ELISA Bremen\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAfk6__vq-AdF2J6AmP59VV2HcDrsmYKrXE2Lu9XZhxwpdB21dvRipTFwdLhHdMk806Y-bzfZWU9Vq3fajTqPqxVYM5ppnaY7k98tC7GB2TKWu-zh_y3CnHgvfxcU7lTvTEhDEVN4uTt3C25fPEuVGphVlGhQT-LqLrd2sLY3qRQwuJ7Aeglb2DA",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJjd_RGzcosUcRsFSP0uRHhYM",
+         "plus_code" : {
+            "compound_code" : "3QMM+Q9 Bremen, Deutschland",
+            "global_code" : "9F5C3QMM+Q9"
+         },
+         "rating" : 4.3,
+         "reference" : "CmRbAAAA_8oG5WxNYw0Q2Z6U7mwyY1vV6j9UYt2vqjqgMoxkaUizsBDc0iVDMne5ayfp4MOTQ6-id8P9DrLKARNx8po82OoADxVWpS2NIB4BCui2Nv8IV1kSEeCgQ7ML2yG6BsJvEhByTHQejx7R7K5FPhapnrkyGhRiNypaFXRNQ1ExUABddjnCIK9jIQ",
+         "types" : [
+            "bar",
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Konsul-Smidt-Straße 10a, 28217 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.08926959999999,
+               "lng" : 8.776548499999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.09063122989272,
+                  "lng" : 8.77817802989272
+               },
+               "southwest" : {
+                  "lat" : 53.08793157010727,
+                  "lng" : 8.775478370107276
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "09a867c292249a6551d9d745afec81e8b3be0777",
+         "name" : "El Mundo Bremen",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3840,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103833227044302531929/photos\"\u003eEl Mundo Bremen\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAtS0ZdELupiOrV-fE5NMaki4CaVXqLI_lGLrBzDhIrxtPB5Soq0o1PQ_mamk9n0dI4GEhLPtGTxM1-K-7gkUM6jxs6vFE-J5mIn5MufjheAOTxuiJhC1j7PWbu7rpfOSQEhAD19Qz751StmkxcAFFefxaGhReOs2aKbtLuxXVh4v9fYKK0hepIw",
+               "width" : 5760
+            }
+         ],
+         "place_id" : "ChIJkxkp_04osUcR4je8eCKeEgs",
+         "plus_code" : {
+            "compound_code" : "3QQG+PJ Bremen, Deutschland",
+            "global_code" : "9F5C3QQG+PJ"
+         },
+         "rating" : 4.4,
+         "reference" : "CmRbAAAArBN5xs7oUKOGmtSsWJlvdHbvScIDr3eCN1UTwx4dpsVf3m_tml-fysDZN65O7DY5lnjONP_jCQQVBXmaXlz1zH0T2iWySNlcfIaZJSEXDYoJox9Eo1HBwqf4hfqxz5XtEhBFsKtT5EYpybkoGHeAKadoGhT0fyxK1kGg-KdztFZVXC_zWWWRqw",
+         "types" : [ "restaurant", "bar", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Faulenstraße 3, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0796248,
+               "lng" : 8.799197699999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08092832989272,
+                  "lng" : 8.80045637989272
+               },
+               "southwest" : {
+                  "lat" : 53.07822867010728,
+                  "lng" : 8.797756720107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "9f02a52aa8803988aeccad3c16f1ce6e78498dc6",
+         "name" : "Plaka Restaurant",
+         "opening_hours" : {},
+         "photos" : [
+            {
+               "height" : 1125,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117961998586549125987/photos\"\u003eIngo L.\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAfUZ9ezpRhiSH7GbjT9uNl0zdXWwdGBE-YAjNQI3tOqvBWiTpDgJTX0--B0ahcJFeVpoo5ljJjEjjaxGM9jh3-_b4e0WW13MG0O6AfSSH6nIKnjkb_1QOi4obEllU-DWTEhAj3LOeR57iMn4FbxHpdLMIGhTBHpQqe6ceLSOBl3ZEJI2EAxo4mw",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJ4f0ghj0osUcRvyOafdfid6E",
+         "plus_code" : {
+            "compound_code" : "3QHX+RM Bremen, Deutschland",
+            "global_code" : "9F5C3QHX+RM"
+         },
+         "rating" : 4.4,
+         "reference" : "CmRbAAAAWzGvcWKKd_HpH38bXgbDPXoRs8z6LWuDjdlm2APpzLMwA_5MmAay39jV8nLDM3BI66pD722P4oHkqiESaEtD5Rw6BfOYWDWTLqvXK8oD9B_1Xh3jlpvPgT1uNQTzO4y2EhBMHtXIw7tOa-7Bxxr95bxMGhTMZvq6yRGcQNWSitRv3jLmqphqTg",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Bahnhofspl. 8, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.08247,
+               "lng" : 8.81119
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08386662989273,
+                  "lng" : 8.812597179892721
+               },
+               "southwest" : {
+                  "lat" : 53.08116697010728,
+                  "lng" : 8.809897520107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "953baa693795fef03dad903660079bd01133c777",
+         "name" : "Hotel Restaurant Edel Weiss Tel. +4942114688",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1371,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113892193441724011394/photos\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAMSrfD4jt7gibAXrc2FD7dpeE4sTLMrH4f7EHSQiWVhLhoR2Q0Or9mM50oYnieQkbSbMPW41NxlZY5xcyy--qq4Vri0ySqUzT-tbcjaqy2USfgwui3E_nzG7sC4kKOtAuEhB15d2OYvJW2m_MIHSJ_M9NGhTW8uZBtsnFXBCADCieKzTC7mmZNw",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJU81qsxMosUcRaJ3FL-oyVMg",
+         "plus_code" : {
+            "compound_code" : "3RJ6+XF Bremen, Deutschland",
+            "global_code" : "9F5C3RJ6+XF"
+         },
+         "rating" : 4.5,
+         "reference" : "CmRbAAAApERTNjeNjrLE5_pAgD-GdH51SFd1NxO2kcAKQKeSJTEg8lJn4tfrPCGVhSH1SiyxIb9VoPFN3zrUGUSlgsUeC_327g7UjmTcDsBrEPWfnJBD5er0Ri3umxcdzQ15JMYWEhCXhw3kOkqvR6-ilEvkI1bEGhROk7VxIK7XJqggaSoIguoGc9kgdQ",
+         "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Konsul-Smidt-Straße 26, 28217 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0912745,
+               "lng" : 8.772186699999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.09292647989272,
+                  "lng" : 8.773935779892721
+               },
+               "southwest" : {
+                  "lat" : 53.09022682010728,
+                  "lng" : 8.771236120107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "bf6538a0c9ec581bacdd85969f2f0734d6f3c11f",
+         "name" : "Restaurant Al Dar Bremen",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2322,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105233298002111258539/photos\"\u003eThorsten Logemann\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA3L4wykH7ZizwsvURs5EscncM6I97ihBjK2lw3OnUipFRlNyr4HPBsCuySsHivan8DQKORl71jtcE89pEx9zPlDxU4O36lwHMVPzZap2LFhDrrCHVe0d3ysYOtTVoeXgzEhCaNZ0GgJmwWL5D9EmGSiqVGhR9GJNWMCN3ZOM9aFT6JFXE45webw",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJpTuKJrUpsUcRnb-sUZuxq0E",
+         "plus_code" : {
+            "compound_code" : "3QRC+GV Bremen, Deutschland",
+            "global_code" : "9F5C3QRC+GV"
+         },
+         "rating" : 4.5,
+         "reference" : "CmRbAAAAxGWlEKdta_jcq76eQM_lolt91B6u2kmw48k0Boyum-Kun1NmjGe4Dz9e1lobNVMP7u9zycUYGaD-FF498RSY_3JbBSYr8Ts19kOC7Hb4Ticdm3jHzTI1ZHoUh8VsKew4EhDDoFZi-0jaFpizodo-kMb6GhRKXu7h2znLrXWG0r7VqzC0yxPa9w",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Am Wall 212, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.08017,
+               "lng" : 8.806884
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08120132989272,
+                  "lng" : 8.808030829892722
+               },
+               "southwest" : {
+                  "lat" : 53.07850167010728,
+                  "lng" : 8.805331170107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "217fd717924f9ccd493ef3a3cba361c34a267de4",
+         "name" : "Kaffeemühle (Mühle Am Wall) - Restaurant, Café, Bistro",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3456,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113815523695134607477/photos\"\u003eJulia Lakomkina\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAALWTgP_Z7b8o_FHRwkcZx8J1BugBMfMVb0h6t1fSBUC3KiCoqG679AFwhg9b9abJ-W_V1RAChSk1wvPzqLJnUZLWgQINQopvSoEKtZy7-DOddY-7pobIN_k7TQLTbKQDrEhDAtquWrNqOuwDQFl4iN21ZGhTUjM5AEsyPXSLdR0AI7xBI5C5aJQ",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJMzEysxYosUcRH7ijeL3N6zE",
+         "plus_code" : {
+            "compound_code" : "3RJ4+3Q Bremen, Deutschland",
+            "global_code" : "9F5C3RJ4+3Q"
+         },
+         "rating" : 4.3,
+         "reference" : "CmRbAAAAlvoSULhVIOLkgXtnl7bbDwLep82DEK_BUcOx9U-zUcw32tEjvnKUEbiXo8WBR0YKFOCT8i-Ydmt2KMIGPjn_U7zDXVDMdysOAP1a6ll9vhlwRnZcf1c0oCAC0aJh_btjEhD0WrAL5rCCPaenTKaBL-pFGhTWXJ8wTM7fU8IQGL9AO91gEhhcBg",
+         "types" : [
+            "restaurant",
+            "cafe",
+            "bar",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Flughafenallee 26, 28199 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0524867,
+               "lng" : 8.7873553
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.05376027989272,
+                  "lng" : 8.788557679892723
+               },
+               "southwest" : {
+                  "lat" : 53.05106062010728,
+                  "lng" : 8.785858020107279
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "41d3fb977991ecb600dcbd4d602b0d037217c588",
+         "name" : "Restaurant BLIXX im ATLANTIC Hotel Airport",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 518,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109201928114722028961/photos\"\u003eRestaurant BLIXX im ATLANTIC Hotel Airport\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAIUaGdCb7XDjbXtO_EiAcDBpMIihKX3swhLdd_vSgYfFzxfDS8M0aZZQX0-AcuQTmSo9FCKpoLKHQqO5R5Ol8fZrr01LjckSf4Ma5IfbcSUzIC4eATNjZnvqXqn9RCq7dEhAiGIzrKawCBgF0lDZFzkCjGhT6qs6_6W6ToKFQcPXgKEF6SdSAXw",
+               "width" : 920
+            }
+         ],
+         "place_id" : "ChIJtYjqU8LXsEcRvYNV_SW26HU",
+         "plus_code" : {
+            "compound_code" : "3Q2P+XW Bremen, Deutschland",
+            "global_code" : "9F5C3Q2P+XW"
+         },
+         "rating" : 4,
+         "reference" : "CmRbAAAAzNuKm-0IP-y4ouVPVyisICvhbKqOkTe-Tqgwq4gwZEds7IX_Wbhu_ifjl4cVALMOV2a6uCjS5yX4m2FCFev7QwwCgY5RUX6ZR-8Bst1rSVcuyMcAucS_y4kkWcVtwVvEEhBMxtQHYq4najvAUYzwg8fKGhTPs5LUyDcxXGb3FkADOd4rkfXjBA",
+         "types" : [ "restaurant", "bar", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Wüstestätte 1, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.07242350000001,
+               "lng" : 8.8094929
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07376537989272,
+                  "lng" : 8.810860829892723
+               },
+               "southwest" : {
+                  "lat" : 53.07106572010727,
+                  "lng" : 8.80816117010728
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "88ba99a55094123533c9c3879f28a0f673836820",
+         "name" : "Teestübchen im Schnoor, Restaurant & Café",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 700,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100958728634531108693/photos\"\u003eTeestübchen im Schnoor, Restaurant &amp; Café\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAcwqlDx4JvO68yicn_o13ryeIqjYPC5kYjb0_NiM0z-Qdo0P1uMEOEAHgeIuCO1U2KKYQR6scFPFs5a5dcjSJ8nZqJbZnZrDBjkI1_qvmntGfGe8jpyPzkFypKM5-aWM1EhA0a2ff9GNkQuOCDnvQliLYGhStKO7j219r8inhoOKVp7HmMUaCMQ",
+               "width" : 700
+            }
+         ],
+         "place_id" : "ChIJjUu6HhsosUcRno5WvJvrN8o",
+         "plus_code" : {
+            "compound_code" : "3RC5+XQ Bremen, Deutschland",
+            "global_code" : "9F5C3RC5+XQ"
+         },
+         "rating" : 4.4,
+         "reference" : "CmRbAAAAQeuV7bjNN9rFCK_2WLubnCwaTIXohc5xjlEG4gJ_IIkuzOD1pP4Cfte3ZwpugO47UoiQzK52yAZ53lmh8bhWYKh7ptaaCzaYduIgLXb8fTsidbH0vao9ggwJAxPV5_Z-EhCJ_e6ZHr0YpMCorHf_oUJNGhTcnBrmaBmIo7RJQW1vip397gkuiA",
+         "types" : [
+            "cafe",
+            "store",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Langenstraße 68, 28203 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.078264,
+               "lng" : 8.799431999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07969582989272,
+                  "lng" : 8.800900129892721
+               },
+               "southwest" : {
+                  "lat" : 53.07699617010728,
+                  "lng" : 8.798200470107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "58d966568b750e9522075a915c646076d27b9e8f",
+         "name" : "Bolero Bremen Schlachte",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 622,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109198391094254762481/photos\"\u003eBolero\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAANbt_dGu5jClinTax9CzHc_8tMgI15emSk0Zm-zAoLXwsx_yOMVlUgX-MtmQ49YiCd7Q4fpiTVQhln4ZbTigIuWQ54hBWTPPXqKVLgPgfl1y7O7wq1hum9L9EjttPX-kAEhCHTO7b7yS-A3_YuA3-grwXGhSbJszr2nOmbi2X1IAZn_6R41mXYA",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJC5RF0RcosUcRGk9Ibnz5aMI",
+         "plus_code" : {
+            "compound_code" : "3QHX+8Q Bremen, Deutschland",
+            "global_code" : "9F5C3QHX+8Q"
+         },
+         "rating" : 4,
+         "reference" : "CmRbAAAAL1lRp2SV1jP9ibc4gqfPE_JA3E0ZC9Pw4oeQFx2oDNK9T-nta9e22vBcJfUPSmNt-OC-vuFtuxX8xi0NHALLd5m1odpX7ZCgk4NXCC6J351LqbIlpPssNRIj_1Q5Fpq0EhA8Fl5m3joA_XKhFvN6e72dGhTsPUYpnqkl25GzIn7fhIKHuDf5aA",
+         "types" : [ "bar", "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Am Wall 186, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.07570459999999,
+               "lng" : 8.8123159
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07706322989272,
+                  "lng" : 8.813755879892721
+               },
+               "southwest" : {
+                  "lat" : 53.07436357010727,
+                  "lng" : 8.811056220107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "ae97267f589b0cfb42f7a3e7169ceeae2bdd2071",
+         "name" : "Restaurant Notos Bremen - Griechisches Restaurant Bremen - Restaurant Bremen",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 922,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106462926522022485202/photos\"\u003eA Google User\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAkBaLusDnoWylS6T1KTZ1l0ghI5KY2OYa044Ms-XazqlgI_S-lcJ24G9mtVImWQhwSq5T49UGYVDYGFXEe3oKQBTHfSF6H9E2yatY2bsV8hZ0x3rkbY28iHzrMnWeeilbEhAnz_IPCkHB1VzpCVItPLF4GhTjrZN0VOwz1J5RoKP0iZbSN-IzHw",
+               "width" : 1018
+            }
+         ],
+         "place_id" : "ChIJN1VeBBAosUcRlXIurlsLGYU",
+         "plus_code" : {
+            "compound_code" : "3RG6+7W Bremen, Deutschland",
+            "global_code" : "9F5C3RG6+7W"
+         },
+         "rating" : 4.4,
+         "reference" : "CmRbAAAAeNsUpD-Ll7owGLSMjJl8D-CJh6kKBkZ723GwaUTFqtfpM5zLSFf-zhqgZ7xKuSB_1-VTNDbIa2b5_GizXXwhH-NxWRJSspVZyOpkhMsTIqLoldYpPnZskaSxylWv-PanEhCiHf_d4oKgXKAgJ-gj7O2gGhTrLYFO06mCZmss11E-ybD6jHMzsg",
+         "types" : [
+            "meal_takeaway",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      },
+      {
+         "formatted_address" : "Martinistraße 62-66, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0781741,
+               "lng" : 8.801006000000001
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07957402989272,
+                  "lng" : 8.802439229892721
+               },
+               "southwest" : {
+                  "lat" : 53.07687437010728,
+                  "lng" : 8.799739570107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "3f50ec9ede0e7ed5ee2c62013b36388589b54ce2",
+         "name" : "Restaurant Shalimar",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1067,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118368710634063733067/photos\"\u003eRestaurant Shalimar\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA4laGnn6eL0ZU5DgR0yGeQCxmzCkck9e9J-P5yL0D9THFmJ07fxVMMdXioTzVKUWrU96_NUUavqjm3M9-mb14oy-KaYu068Wc4gprEdNQujy4DT_T2re1bOZXqgg9ELMfEhCnFNA1c5AdzmQ1L8R0963yGhSUuYY4bt-8R--jHf4OStOmX8i3rA",
+               "width" : 1071
+            }
+         ],
+         "place_id" : "ChIJMWZ_uRcosUcR5rKIa-kjDhE",
+         "plus_code" : {
+            "compound_code" : "3RH2+7C Bremen, Deutschland",
+            "global_code" : "9F5C3RH2+7C"
+         },
+         "rating" : 4.3,
+         "reference" : "CmRbAAAAA7mz_cDRZce2XID_j9Z02wsw8IZEeAiG-0u7lQjFzD7qPzmWdTOdC84eA8KAedxu_EQhLExfG1hIqPFiVfb81dzi8hXvC3E6ljdVHYdhVrkKz1q34vmuMfbJgeTSJXPVEhAvhGZRMenjaHizdkHluKrRGhTKV7NHiidGtLGDH_VXcsgyU7F2vQ",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Schlachte 15, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.07687,
+               "lng" : 8.80199
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07824942989272,
+                  "lng" : 8.80313852989272
+               },
+               "southwest" : {
+                  "lat" : 53.07554977010728,
+                  "lng" : 8.800438870107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "61c4620c80478bcbc391fd5b0b6c3f625bcbafca",
+         "name" : "Luv",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 413,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117148544228011192641/photos\"\u003eRestaurant Luv - Café. Bar. Lounge. - Bremen, Schlachte\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAidk-KYDR8lIoDD-Zz3I9SXSCq1gw7lkejvJjblDq5ncpXvU8Nu1i-vo_LNieywaC-ZTyfU_FInv0ljXmQawv1LQwgnPy5PA_hRygoxcGgJB54JB1kbjlkdapQGv-FLYSEhBssOuoMkZY60UjDP1ms0AGGhRIKhbKgqtB-3TzF_6Im1d70jSvJA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJiUKtgxcosUcRfKgdGeoyySU",
+         "plus_code" : {
+            "compound_code" : "3RG2+PQ Bremen, Deutschland",
+            "global_code" : "9F5C3RG2+PQ"
+         },
+         "rating" : 4.1,
+         "reference" : "CmRbAAAAd39oiBA2ar3NyUP2k5ZOmlngf18M1YPL_4CyPaGsrHyGKW0-f9vviNNn9w22DmEHlijQ4tT4kfPpmcJr1t2Cm0VTlkeqJkYPVxnkamTVP9Xw-ZwpJMDYw8a47oybZ81jEhAo5tNPqj4SY3veLtgYyTGFGhR4wHlJmOH0zpbgUQ7ZxWcmcGy3oA",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Daniel-von-Büren-Straße 29, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.08474529999999,
+               "lng" : 8.8021005
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08617807989273,
+                  "lng" : 8.803330079892723
+               },
+               "southwest" : {
+                  "lat" : 53.08347842010728,
+                  "lng" : 8.800630420107279
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "3d59d3c3d3f61d9fae705575ff7d92f00c59077b",
+         "name" : "Bombay - Indisches Spezialitäten restaurant",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 3024,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106260316373722839320/photos\"\u003eBombay\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA41Ng4aSUYTgDanpO-vBC6USvBcVL1_XsBq_hsGksMd4AevnXe5py7bFPPxFiIfHrx6uGSCwfI0gebBKTQ5FATWkct4Kzgv81p6JfP-2Av6Q5z8Mvz2tEuCS6QBOBFaqhEhAXcR6J5T5ztw0NKv74kZScGhQDW-s9KDns3hPlh4NyGMBcx2LGgA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJS8OyZRUosUcRqt3_FJG6wBQ",
+         "plus_code" : {
+            "compound_code" : "3RM2+VR Bremen, Deutschland",
+            "global_code" : "9F5C3RM2+VR"
+         },
+         "rating" : 4,
+         "reference" : "CmRbAAAAvtZbR-rIkbRE91cdpTFhUUGaeNMC6L7P0IGGyfSG-9l9n2YCbec3bhFdcT5TURSQCBdfo59n1Dluy9s-wniFWHBVGAbozvXluF1A2lJlAg8cV85Xx01uYflPHWUXLP1gEhCACKm_ICqtEcH098lAfLHzGhQfrV-IroiccQhtJ-99xVhJ7Th7cg",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Am Markt 1, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0761332,
+               "lng" : 8.807035599999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07743797989272,
+                  "lng" : 8.808420529892722
+               },
+               "southwest" : {
+                  "lat" : 53.07473832010728,
+                  "lng" : 8.805720870107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "0a268f8a0bf97ca92b7db6fc90c5bd7b5c45ea06",
+         "name" : "John Benton Restaurant",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2268,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108321989263418057737/photos\"\u003eHardi\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAASi6ih28TDW8W4oHFoLLhAfI5RFRNz0d0xJt8Q7BgfteYB3ZCoQ5DIhu8fHsogfwBCeYBpJtMBSCUV_0xSdxLPDmTbxaq6s3mif-vL9U6_KqCZhZfRoKStIeiVnj68QRyEhCc0GwxAJJi8cVzols-v_43GhTQCe2AxBETaJ4pNHINxjPoJGKGgg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJAb7d7dCFZEERDbOjgAGIlo0",
+         "plus_code" : {
+            "compound_code" : "3RG4+FR Bremen, Deutschland",
+            "global_code" : "9F5C3RG4+FR"
+         },
+         "rating" : 3.8,
+         "reference" : "CmRbAAAApq-np2nnzhCZjS8XDGuOr6NZpimMjRD5G0K1K2LZ1ao7L1bGHRZ9RDuWtj9wJf37_XWrDWGq0ztsnkeoDTqR5taV9_daI9coEZryzssR-0ZUSzhs-jLAFINt-IXajbo7EhBJWM9YaK4-osLB8Gm2gxG5GhSioii6f6l4KvV3g_eumWSRoCzQgQ",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Wiener Straße 4, 28359 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.1071961,
+               "lng" : 8.8446575
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.10844147989272,
+                  "lng" : 8.846615979892723
+               },
+               "southwest" : {
+                  "lat" : 53.10574182010728,
+                  "lng" : 8.843916320107279
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "fea0123ff6b663621e472b3d0a7c7e4b8174ebee",
+         "name" : "Restaurant CAMPUS im ATLANTIC Hotel Universum",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 518,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108146590039426239249/photos\"\u003eRestaurant CAMPUS im ATLANTIC Hotel Universum\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRZAAAAPzSRVF2DpOgv3Gywp4c_1YNkpHifLrJxTY7O123P_LGXolQVpu_D1ibv0HMkraAe2c_eu5yYhzhD6Bic2_fgjbCRM7hsXaGcABlf1F89lrLXZeMwJfmIwnlK0GoM7MslEhA7txUBwSJPfu87nxbnWb26GhRP-R60zqNWIkjxrzSqO591ehea3w",
+               "width" : 920
+            }
+         ],
+         "place_id" : "ChIJ19fEYismsUcRQ_WC8nYXFik",
+         "plus_code" : {
+            "compound_code" : "4R4V+VV Bremen, Deutschland",
+            "global_code" : "9F5C4R4V+VV"
+         },
+         "rating" : 4.1,
+         "reference" : "CmRbAAAA60TpwLRnpJvEiREHEu183Mf00VVCc0rtaVLKg5ugyGkCMnVe4UgUrwjor3TAR1dkbkZpYsprryXB-wlZCfk3feCY3YH1q3zLLF5s9tDjMF4gw_ogMciUF-pB3ojr152iEhAAV1BjGV6-_F1LrV6KZBBBGhRIgsNiGPKvfPdRNIE6tjtBeUen9A",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "28217 Bremen, Am Weser-Terminal 4, 28217 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0817294,
+               "lng" : 8.7890321
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08322197989272,
+                  "lng" : 8.790188129892721
+               },
+               "southwest" : {
+                  "lat" : 53.08052232010728,
+                  "lng" : 8.787488470107277
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "4868d87e6651b799bd284fbc51cb34a25980830a",
+         "name" : "Restaurant Leander im GOP Varieté-Theater Bremen",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 1192,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109537901544391949578/photos\"\u003eRestaurant Leander\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA0SYqrSreFHN9akYgGYNe_qXraYsaReCyujeNSYpZ8DjprgIFSbdZ-L9ZDcsQNIGEuUXlXEk3CBt4S7HpQefF35HX-MpzrvCBvsoomHdLoLeBHIEjSFwzNSawTfmM-E9CEhAwy9ANmnTIJ4aqtaunhEiwGhSQn4PDUsFD-mFhaQXVUpcm8jyItQ",
+               "width" : 2120
+            }
+         ],
+         "place_id" : "ChIJw69zHDoosUcRQk87Hvq9iPQ",
+         "plus_code" : {
+            "compound_code" : "3QJQ+MJ Bremen, Deutschland",
+            "global_code" : "9F5C3QJQ+MJ"
+         },
+         "rating" : 3.1,
+         "reference" : "CmRbAAAA1bTSdcw06DdIHSWFc1btXf4Oi8InQ4vCTj4JCXF0QKbLvnjoHLz57Ypum9uWI9DeHbrNMOZ0k2yIpVR6hTxRl6DvBXgfVCKG3lQWYQvtJJ0BkWHt_Y-BYNY1lwjl-DNIEhAXrDlp3ZaTD24QzLIE2P2sGhTi90K7SoSaxkPAr_5dHOMeQAg3Vw",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Contrescarpe 80, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.079919,
+               "lng" : 8.809251999999999
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.08118507989273,
+                  "lng" : 8.810550579892722
+               },
+               "southwest" : {
+                  "lat" : 53.07848542010728,
+                  "lng" : 8.807850920107276
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "77660bd2283efc91b578319a894fb5c6a760e7a7",
+         "name" : "Grashoff´s Bistro",
+         "opening_hours" : {
+            "open_now" : false
+         },
+         "photos" : [
+            {
+               "height" : 388,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105044567066369071322/photos\"\u003eGrashoff´s Bistro\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAARL3Kh6_UldG6VGWA1Dh7UD5C1dK2esOtSIeAX256UofBgJ9R8A5IwbelCD5wxJELLkPTmCvPbVwgq5aSu6PlioyLvHY3MelS3KyLsvvNZU9qo7LhBUtDr4pT0RIGL82wEhBE8jsYRdATwxypjM5JJnEwGhQ3wNcEIXEu9nNmgTsaDm-_0cfAeA",
+               "width" : 587
+            }
+         ],
+         "place_id" : "ChIJE_HychEosUcR4FV3jQVFn0Y",
+         "plus_code" : {
+            "compound_code" : "3RH5+XP Bremen, Deutschland",
+            "global_code" : "9F5C3RH5+XP"
+         },
+         "rating" : 4.4,
+         "reference" : "CmRbAAAA-uv8J-xGG0w13u1LHk2yA9q_AlRL3E9rnPGaGbvdd3BYGQNG6wroNFIM5kCp18WMfu4w_7mDcJUjYMiWjJ7E0jeNnVoZF_p68nPQVpfjWLJXBPPKG2RDfg7ja7nqhwxHEhAnZtD1sLf_f009m-Nndld7GhStrC1Y25avHNV-KgGxO9QUzkGEFg",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Schnoor 34, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.072728,
+               "lng" : 8.8098174
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07408792989272,
+                  "lng" : 8.811176029892724
+               },
+               "southwest" : {
+                  "lat" : 53.07138827010728,
+                  "lng" : 8.808476370107281
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "f924828811260a7d5e694091cc233a0f58cdc44c",
+         "name" : "Beck's in'n Snoor",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1836,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116966801632320026061/photos\"\u003eStefan Busch\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAA312iUSBfOuN2d5wfEvDqd2Co4x3WP8qC02zWQ-dE7InTQdLW80Lr0fE-EogAmt2VKonvQuAdqw2c2spg8OVrGcLhiydE8TGYyKb2A1xK0MLjqBe8bWeBxt449MFJ8gGvEhB3VZOAPci_S2ljo7RrYOfTGhRvJ_bit0hyorHiHFCYWhJd6HHMDg",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJT-hK4BoosUcRQycfJJ9DPzU",
+         "plus_code" : {
+            "compound_code" : "3RF5+3W Bremen, Deutschland",
+            "global_code" : "9F5C3RF5+3W"
+         },
+         "rating" : 4.1,
+         "reference" : "CmRbAAAAnvSUTnBdqtNbW_a85iL77gaJNnun0gjRFgTGwA0QFWP7jVMzeOQbxMFukMBIHd0vwZ6DJ88hQ8Efmm-mjQ_akTUun6bj9PTRiSbcAVSWKdIb5wWGQIKpJ7ikEew2DpP9EhAGtBsm94H6hifb0FYwBxXoGhS3xDqd-xlDjvuIyQycdjvAhaeF3g",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Am Wall 201, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0735414,
+               "lng" : 8.8126114
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07486257989271,
+                  "lng" : 8.814077979892724
+               },
+               "southwest" : {
+                  "lat" : 53.07216292010727,
+                  "lng" : 8.811378320107281
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+         "id" : "7ef7f80fb5939c0fb703104b73619123250de4f1",
+         "name" : "FISHERMAN'S Seafood",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2976,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104622275466314967198/photos\"\u003eChristian Koch\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAALBPuFxou3RXskplGDE1A-m3tDxO4wKAfeWd8U6Z3irXicsq1JDStIdCCLEKA0rtKEn5RFPpo_spKqXs89TrrH-tCS1v67kKprRezQRiybaBXgZ-ZY840ndFgppvMrco8EhAeC3G1U02ie-OfEfCXXQ45GhQ_m2lHUZj54Vfq0v-Da2x2pkaAkQ",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJRQW8NgUosUcRZo3iK19DcLE",
+         "plus_code" : {
+            "compound_code" : "3RF7+C2 Bremen, Deutschland",
+            "global_code" : "9F5C3RF7+C2"
+         },
+         "rating" : 4.5,
+         "reference" : "CmRbAAAAdrF6p88Gcd5bnb_MzQLtCnfmpMaql2g8lpuotRUGvlOBSmCAzI5s4J6BJRAQ_rNhsw_xij0wqh4Gz9-YKEIaFzc3u-vAYaQ-g-L4DPvKFqebOUUspmgzZxi-hkyPSYUOEhBH424lrdQeIcqUh8Z3jVnuGhRki2TAywT-X9Bcvhi0ReCZFAP6EQ",
+         "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+      },
+      {
+         "formatted_address" : "Am Markt 17, 28195 Bremen, Deutschland",
+         "geometry" : {
+            "location" : {
+               "lat" : 53.0751936,
+               "lng" : 8.8068881
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 53.07654897989271,
+                  "lng" : 8.808329529892722
+               },
+               "southwest" : {
+                  "lat" : 53.07384932010727,
+                  "lng" : 8.805629870107278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/cafe-71.png",
+         "id" : "990d70ec90083d7914fc6af77f3ae0c6bfdbecc8",
+         "name" : "Kaffeehaus u. Restaurant Classico",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 1080,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103140875304798154595/photos\"\u003eChristian Wietholt\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAAF9UNx5lMGLdjFDXQHibJLSoa5Nm78PeMaXAEqTMbxmYGGLPkhLI99kHKV64JEiH3ISlufNEg_phEVQNgPSDyfo5ZOqyDHCGi3J6WH-RY5QciA6UKOc7fthdHkWSNlmEREhDNE2IZz3SoVj3GG4JavpNyGhS_vwumjaXNCYG41xFH4befzDDssA",
+               "width" : 1616
+            }
+         ],
+         "place_id" : "ChIJTdPPDhoosUcRDwkb9UHpFoM",
+         "plus_code" : {
+            "compound_code" : "3RG4+3Q Bremen, Deutschland",
+            "global_code" : "9F5C3RG4+3Q"
+         },
+         "rating" : 4,
+         "reference" : "CmRbAAAAZ5VuTo8ppwL7ArThKc9BgQ-YRZq4y7Fl74pwaVaRkNpyvwFRXYYGk_1AuogMcv1_NU2WxzAz-8_bMR6ZrFe8CW124futqP_p3F4GyUORfZW50eWUoV4D_lEP8QvwbgjXEhAoiAutCvlFKtSsSAIqpOC1GhTKSDD_tL4cE2YQMVO_a-ant5C6RQ",
+         "types" : [
+            "cafe",
+            "store",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+         ]
+      }
+   ]
