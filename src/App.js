@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     locations: [],
     markers: [],
+    showingLocations: [],
     keysAPI: {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
     }
@@ -27,18 +28,18 @@ class App extends Component {
       locationState.push({location: location, id: markerId})
       markerState.push({position: markerLocation, title: markerTitle, id: markerId})
     })
-    this.setState({locations: locationState, markers: markerState})
+    this.setState({locations: locationState, markers: markerState, showingLocations: locationState})
   }
-  addLocationsOnMap = (map) => {
-    let markers = this.state.markers
-    markers['map'] = map
-    this.setState({markers: markers})
+  addLocationsOnMap = () => {
+
+  }
+  updateShowingLocations = (showingLocations) => {
+    this.setState({showingLocations: showingLocations})
   }
   render() {
     return (
       <div className="App">
         <MapContainer
-          isMarkerShown
           addLocationsOnMap={this.addLocationsOnMap}
           GoogleKey={this.state.keysAPI['GoogleMaps']}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
@@ -48,7 +49,12 @@ class App extends Component {
           locations={this.state.locations}
           markers={this.state.markers}
         />
-        <SearchPlace />
+        <SearchPlace
+          locations={this.state.locations}
+          markers={this.state.markers}
+          showingLocations={this.state.showingLocations}
+          updateShowingLocations={this.updateShowingLocations}
+        />
       </div>
     );
   }

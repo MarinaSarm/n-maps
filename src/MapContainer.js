@@ -9,10 +9,11 @@ const MapContainer = compose(
 )((props) => {
     return (
         <GoogleMap
-          defaultZoom={11}
+          defaultZoom={12}
           defaultCenter={{ lat: 53.0793, lng: 8.8017}}
         >
-          {props.isMarkerShown && props.markers.map((marker) => <Marker key={marker.id} position={marker.position} />)}
+        // show markers on map
+          {props.markers.map((marker) => <Marker key={marker.id} position={marker.position} />)}
 
         </GoogleMap>
 
