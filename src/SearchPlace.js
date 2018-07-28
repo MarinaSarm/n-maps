@@ -8,7 +8,8 @@ class SearchPlace extends Component {
     query: ''
   }
   updateQuery = (query) => {
-    // hold the value of input field in state
+    /* hold the value of input field in state
+    */
     this.setState({ query: query })
     let showingLocations = this.props.locations
     if (query.length > 0) {
@@ -17,16 +18,19 @@ class SearchPlace extends Component {
         match.test(location.location.name)
       )
     } else {
-      // if no search, then show all
+      /* if no search, then show all
+      */
       showingLocations = this.props.locations
     }
-    // choose markers with the same id
+    /* choose markers with the same id
+    */
     let showingMarkers = showingLocations.map((location) => {
       return this.props.markers.filter((marker) =>
         marker.id === location.id
       )[0]
     })
-    // update state of app component
+    /* update state of app component
+    */
     this.props.updateShowingLocations(showingLocations, showingMarkers)
   }
   render(){

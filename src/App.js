@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MapContainer from './MapContainer'
 import SearchPlace from './SearchPlace'
-import Geocode from 'react-geocode'
-// import my initial set of restaurants, got with request for restaurants in Bremen
+/* import my initial set of restaurants, got with request for restaurants in Bremen
+*/
 import Restaurants from './restaurants'
 
 class App extends Component {
@@ -18,7 +17,8 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    // place initial set of restaurants locations and markers to state
+    /* place initial set of restaurants locations and markers to state
+    */
     const locations = Restaurants
     const locationState = []
     const markerState = []
