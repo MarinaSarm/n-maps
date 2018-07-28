@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import MapContainer from './MapContainer'
 import SearchPlace from './SearchPlace'
+import ListLocations from './ListLocations'
 /* import my initial set of restaurants, got with request for restaurants in Bremen
 */
 import Restaurants from './restaurants'
@@ -54,6 +55,10 @@ class App extends Component {
           showingLocations={this.state.showingLocations}
           showingMarkers={this.state.showingMarkers}
           updateShowingLocations={this.updateShowingLocations}
+        />
+        <ListLocations
+          showingLocations={this.state.showingLocations}
+          showingMarkers={this.state.showingMarkers}
         />
       </div>
     );
