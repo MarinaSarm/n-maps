@@ -19,7 +19,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "e8fddfd12eee87ba6704679e8031ba5a861b69ae",
-         "name" : "Restaurant ELISA Bremen",
+         "name" : "ELISA",
          "opening_hours" : {
             "open_now" : true
          },
@@ -69,7 +69,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "09a867c292249a6551d9d745afec81e8b3be0777",
-         "name" : "El Mundo Bremen",
+         "name" : "El Mundo",
          "opening_hours" : {
             "open_now" : true
          },
@@ -112,7 +112,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "9f02a52aa8803988aeccad3c16f1ce6e78498dc6",
-         "name" : "Plaka Restaurant",
+         "name" : "Plaka",
          "opening_hours" : {},
          "photos" : [
             {
@@ -153,7 +153,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
          "id" : "953baa693795fef03dad903660079bd01133c777",
-         "name" : "Hotel Restaurant Edel Weiss Tel. +4942114688",
+         "name" : "Edel Weiss",
          "opening_hours" : {
             "open_now" : true
          },
@@ -196,7 +196,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "bf6538a0c9ec581bacdd85969f2f0734d6f3c11f",
-         "name" : "Restaurant Al Dar Bremen",
+         "name" : "Al Dar Bremen",
          "opening_hours" : {
             "open_now" : true
          },
@@ -239,7 +239,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "217fd717924f9ccd493ef3a3cba361c34a267de4",
-         "name" : "Kaffeemühle (Mühle Am Wall) - Restaurant, Café, Bistro",
+         "name" : "Kaffeemühle (Mühle Am Wall)",
          "opening_hours" : {
             "open_now" : true
          },
@@ -289,7 +289,7 @@
          },
          "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
          "id" : "41d3fb977991ecb600dcbd4d602b0d037217c588",
-         "name" : "Restaurant BLIXX im ATLANTIC Hotel Airport",
+         "name" : "BLIXX im ATLANTIC Hotel Airport",
          "opening_hours" : {
             "open_now" : false
          },

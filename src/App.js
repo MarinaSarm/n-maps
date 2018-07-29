@@ -20,6 +20,14 @@ class App extends Component {
       'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
     }
   }
+  fetchRestaurants = (url) => {
+    return new Promise((resolve, reject) => {
+      fetch(url)
+         .then(response => {if (response.ok) {return response.json()} reject('Your API quota exceeded')})
+         .then((data) => {if (data) resolve(data)})
+         .catch(e => reject(e, 'Error when getting the restaurants details'))
+    })
+  }
   componentDidMount() {
     /* place initial set of restaurants locations and markers to state
     */
@@ -40,29 +48,29 @@ class App extends Component {
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
     /*fetch results from Foursquare
     */
-    fetch(`https://api.foursquare.com/v2/venues/explore?ll=53.0793,8.8017&query=restaurant&v=20180729&limit=20&intent=checkin&radius=1000&name=ELISA&client_id=${this.state.keysAPI['FoursquareClient']}&client_secret=${this.state.keysAPI['FoursquareSecret']}&X-RateLimit-Remaining`)
-         .then(res => res.json())
-         .catch(e => requestError(e, 'getting the restaurants form Foursquare'))
-         .then((data) => {
-            let results = data.response.groups[0].items
-            console.log(results)
-            let details = results.map((restaurant) => {
-              let info = {}
-              info['geometry'] = {'location': {'lat': '', 'lng': ''}}
-              info['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
-              info['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
-              info['id'] = restaurant.venue.id
-              info['formatted_address'] = restaurant.venue.location.formattedAddress.join(', ')
-              info['name'] = restaurant.venue.name
-              return info
-            })
-            this.setState({resultFoursquare: details})
+
+    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${this.state['keysAPI']['FoursquareClient']}&client_secret=${this.state['keysAPI']['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
+
+    this.fetchRestaurants(urlArray)
+        .then(resp => {
+          const results = resp.response
+          console.log(results)
+          let details = results.map((restaurant) => {
+            let info = {}
+            info['geometry'] = {'location': {'lat': '', 'lng': ''}}
+            info['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
+            info['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
+            info['id'] = restaurant['venue']['id']
+            info['formatted_address'] = restaurant['venue']['location']['formattedAddress'].join(', ')
+            info['name'] = restaurant['venue']['name']
+            return info
           })
-         .catch(e => requestError(e, 'getting the restaurants details'))
+          this.setState({resultFoursquare: details})
+        }).catch(err => requestError(err, 'with getting restaurants info'))
 
     function requestError(e, part) {
       console.log(e);
-      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}.</p>`);
+      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
     }
   }
   updateShowingLocations = (showingLocations, showingMarkers) => {
