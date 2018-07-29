@@ -12,9 +12,11 @@ class MarkersShow extends Component {
   }
   showInfo = () => {
     this.setState({info: true})
+    this.props.passId(this.props.marker.id)
   }
   closeInfo = () => {
     this.setState({info: false})
+    this.props.passId('')
   }
   render() {
     return(

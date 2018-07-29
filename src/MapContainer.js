@@ -22,6 +22,7 @@ const MapContainer = compose(
             showingMarkers={props.showingMarkers}
             markers={props.markers}
             marker={marker}
+            passId={props.passId}
           />
           ))
         }

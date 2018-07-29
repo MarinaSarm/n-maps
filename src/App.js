@@ -54,6 +54,7 @@ class App extends Component {
           showingMarkers={this.state.showingMarkers}
           showInfoToggle={this.showInfoToggle}
           markers={this.state.markers}
+          passId={this.passId}
         />
         <SearchPlace
           locations={this.state.locations}
