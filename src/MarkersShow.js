@@ -29,7 +29,8 @@ class MarkersShow extends Component {
           >
             {this.props.marker.info === true &&
               <InfoWindow>
-                <InfoWindowShow />
+                <InfoWindowShow
+                />
               </InfoWindow>
             }
           </Marker>

@@ -14,9 +14,11 @@ class App extends Component {
     showingLocations: [],
     showingMarkers: [],
     currentLocation: '',
+    resultFoursquare: [],
     keysAPI: {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
-      'YelpReviews': 'JqyqCkdIzkAOtbIdzpjj4_e127n38Y99fWz4N8XeaomfEr-SAgRwfEjxfdQZYAWvHqWPK72omnhUFl_zX0orvNrDBqLxPQByMhV1IkEPbhZlXm2Vj-Z28PmgJNBcW3Yx'
+      'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
+      'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
     }
   }
   componentDidMount() {
@@ -37,6 +39,33 @@ class App extends Component {
       markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
+    /*fetch results from Foursquare
+    */
+    fetch(`https://api.foursquare.com/v2/venues/explore?ll=53.0793,8.8017&query=restaurant&v=20180729&limit=20&intent=browse&radius=3000&client_id=${this.state.keysAPI['FoursquareClient']}&client_secret=${this.state.keysAPI['FoursquareSecret']}&X-RateLimit-Remaining`)
+         .then(res => res.json())
+         .catch(e => requestError(e, 'getting the restaurants form Foursquare'))
+         .then((data) => {
+            let results = data.response.groups[0].items
+            console.log(results)
+            let details = results.map((restaurant) => {
+              let info = {}
+              info['geometry'] = {'location': {'lat': '', 'lng': ''}}
+              info['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
+              info['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
+              info['id'] = restaurant.venue.id
+              info['formatted_address'] = restaurant.venue.location.formattedAddress.join(', ')
+              info['name'] = restaurant.venue.name
+              return info
+            })
+            this.setState({resultFoursquare: details})
+          })
+         .catch(e => requestError(e, 'getting the restaurants details'))
+
+
+    function requestError(e, part) {
+      console.log(e);
+      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}.</p>`);
+    }
   }
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
@@ -63,6 +92,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div id="Error" />
         <MapContainer
           GoogleKey={this.state.keysAPI['GoogleMaps']}
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
