@@ -13,7 +13,6 @@ class App extends Component {
     markers: [],
     showingLocations: [],
     showingMarkers: [],
-    currentLocation: '',
     resultFoursquare: [],
     keysAPI: {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
@@ -61,7 +60,6 @@ class App extends Component {
           })
          .catch(e => requestError(e, 'getting the restaurants details'))
 
-
     function requestError(e, part) {
       console.log(e);
       document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}.</p>`);
@@ -104,7 +102,6 @@ class App extends Component {
           markers={this.state.markers}
           updateInfoMarker={this.updateInfoMarker}
           updateLocationStyle={this.updateLocationStyle}
-          currentLocation={this.state.currentLocation}
         />
         <SearchPlace
           locations={this.state.locations}
@@ -115,7 +112,6 @@ class App extends Component {
           showingLocations={this.state.showingLocations}
           updateInfoMarker={this.updateInfoMarker}
           updateLocationStyle={this.updateLocationStyle}
-          currentLocation={this.state.currentLocation}
         />
       </div>
     );

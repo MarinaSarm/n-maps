@@ -24,7 +24,6 @@ const MapContainer = compose(
             marker={marker}
             updateInfoMarker={props.updateInfoMarker}
             updateLocationStyle={props.updateLocationStyle}
-            currentLocation={props.currentLocation}
           />
           ))
         }

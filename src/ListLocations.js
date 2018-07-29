@@ -17,7 +17,6 @@ class ListLocations extends Component {
                 location={location}
                 updateInfoMarker={this.props.updateInfoMarker}
                 updateLocationStyle={this.props.updateLocationStyle}
-                currentLocation={this.props.currentLocation}
               />
             </li>
           ))}
