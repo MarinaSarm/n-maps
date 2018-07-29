@@ -15,8 +15,8 @@ class ListLocations extends Component {
             >
               <LocationOnList
                 location={location}
-                passId={this.props.passId}
                 updateInfoMarker={this.props.updateInfoMarker}
+                updateLocationStyle={this.props.updateLocationStyle}
                 currentLocation={this.props.currentLocation}
               />
             </li>

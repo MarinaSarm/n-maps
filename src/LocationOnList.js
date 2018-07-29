@@ -1,26 +1,19 @@
 import React, { Component } from 'react'
 
 class LocationOnList extends Component {
-  state ={
-    locationStyle: {
-      backgroundColor: 'red'
-    }
-  }
   highlightLocation = () => {
-    this.props.passId(this.props.location.id)
-    this.setState({locationStyle: {backgroundColor: 'yellow'}})
     this.props.updateInfoMarker(this.props.location.id, true)
+    this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'})
   }
   returnStyleLocation = () => {
-    this.props.passId('')
-    this.setState({locationStyle: {backgroundColor: 'red'}})
     this.props.updateInfoMarker(this.props.location.id, false)
+    this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'})
   }
   render(){
     return(
         <div
           className='restaurant-list-item'
-          style={this.state.locationStyle}
+          style={this.props.location.locationStyle}
           onMouseOver={this.highlightLocation}
           onMouseOut={this.returnStyleLocation}
         >

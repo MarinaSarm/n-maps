@@ -29,7 +29,9 @@ class App extends Component {
       let markerLocation = location.geometry.location
       let markerTitle = location.name
       let markerId = location.id
-      locationState.push({location: location, id: markerId})
+      locationState.push({location: location, id: markerId, locationStyle: {
+        backgroundColor: 'red'
+      }})
       /* here store also info about infowindow setState
       */
       markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false})
@@ -39,16 +41,23 @@ class App extends Component {
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
-  passId = (id) => {
-    this.setState({currentLocation: id})
-  }
   updateInfoMarker = (id, info) => {
-    this.state.showingMarkers.map((marker) => {
+    let newMarkers = this.state.showingMarkers.map((marker) => {
        if (marker.id === id) {
          marker.info = info
        }
        return marker
     })
+    this.setState({showingMarkers: newMarkers})
+  }
+  updateLocationStyle = (id, locationStyle) => {
+    let newLocations = this.state.showingLocations.map((location) => {
+      if (location.id === id) {
+        location.locationStyle = locationStyle
+      }
+      return location
+    })
+    this.setState({showingLocations: newLocations})
   }
   render() {
     return (
@@ -62,8 +71,8 @@ class App extends Component {
           showingMarkers={this.state.showingMarkers}
           showInfoToggle={this.showInfoToggle}
           markers={this.state.markers}
-          passId={this.passId}
           updateInfoMarker={this.updateInfoMarker}
+          updateLocationStyle={this.updateLocationStyle}
           currentLocation={this.state.currentLocation}
         />
         <SearchPlace
@@ -73,8 +82,8 @@ class App extends Component {
         />
         <ListLocations
           showingLocations={this.state.showingLocations}
-          passId={this.passId}
           updateInfoMarker={this.updateInfoMarker}
+          updateLocationStyle={this.updateLocationStyle}
           currentLocation={this.state.currentLocation}
         />
       </div>
