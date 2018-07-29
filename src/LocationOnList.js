@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 class LocationOnList extends Component {
   highlightLocation = () => {
-    this.props.updateInfoMarker(this.props.location.id, true)
+    this.props.updateInfoMarker(this.props.location.id, true, 1)
     this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'})
   }
   returnStyleLocation = () => {
-    this.props.updateInfoMarker(this.props.location.id, false)
+    this.props.updateInfoMarker(this.props.location.id, false, null)
     this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'})
   }
   render(){

@@ -34,17 +34,18 @@ class App extends Component {
       }})
       /* here store also info about infowindow setState
       */
-      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false})
+      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
   }
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
-  updateInfoMarker = (id, info) => {
+  updateInfoMarker = (id, info, animation) => {
     let newMarkers = this.state.showingMarkers.map((marker) => {
        if (marker.id === id) {
          marker.info = info
+         marker.animation = animation
        }
        return marker
     })

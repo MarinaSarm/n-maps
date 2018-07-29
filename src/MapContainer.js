@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, Marker, withGoogleMap, withScriptjs, InfoWindow } from "react-google-maps"
+import { GoogleMap, Marker, withGoogleMap, withScriptjs, InfoWindow, Animation } from "react-google-maps"
 import { compose } from 'recompose'
 import MarkersShow from './MarkersShow'
 

@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
-import { Marker, InfoWindow } from "react-google-maps"
+import { Marker, InfoWindow, Animation } from "react-google-maps"
+import './MarkersShow.css'
 
 class MarkersShow extends Component {
   state = {
-    show: false
+    show: false,
+    animation: 2
   }
   showInfo = () => {
-    this.props.updateInfoMarker(this.props.marker.id, true)
-    this.setState({show: true})
+    this.props.updateInfoMarker(this.props.marker.id, true, 1)
+    this.setState({show: true, animation: 1})
     this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'yellow'})
   }
   closeInfo = () => {
-    this.props.updateInfoMarker(this.props.marker.id, false)
-    this.setState({show: false})
+    this.props.updateInfoMarker(this.props.marker.id, false, null)
+    this.setState({show: false, animation: null})
     this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'red'})
   }
   render() {
@@ -22,6 +24,7 @@ class MarkersShow extends Component {
             position={this.props.marker.position}
             onMouseOver={this.showInfo}
             onMouseOut={this.closeInfo}
+            animation={this.props.marker.animation}
           >
             {this.props.marker.info === true &&
               <InfoWindow>
