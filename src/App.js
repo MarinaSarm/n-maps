@@ -40,7 +40,7 @@ class App extends Component {
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
     /*fetch results from Foursquare
     */
-    fetch(`https://api.foursquare.com/v2/venues/explore?ll=53.0793,8.8017&query=restaurant&v=20180729&limit=20&intent=browse&radius=3000&client_id=${this.state.keysAPI['FoursquareClient']}&client_secret=${this.state.keysAPI['FoursquareSecret']}&X-RateLimit-Remaining`)
+    fetch(`https://api.foursquare.com/v2/venues/explore?ll=53.0793,8.8017&query=restaurant&v=20180729&limit=20&intent=checkin&radius=1000&name=ELISA&client_id=${this.state.keysAPI['FoursquareClient']}&client_secret=${this.state.keysAPI['FoursquareSecret']}&X-RateLimit-Remaining`)
          .then(res => res.json())
          .catch(e => requestError(e, 'getting the restaurants form Foursquare'))
          .then((data) => {
@@ -98,6 +98,7 @@ class App extends Component {
           containerElement={<div style={{ height: `80vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
           showingMarkers={this.state.showingMarkers}
+          showingLocations={this.state.showingLocations}
           showInfoToggle={this.showInfoToggle}
           markers={this.state.markers}
           updateInfoMarker={this.updateInfoMarker}
