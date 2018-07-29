@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Marker, InfoWindow, Animation } from "react-google-maps"
 import './MarkersShow.css'
+import InfoWindowShow from './InfoWindowShow'
 
 class MarkersShow extends Component {
   state = {
@@ -28,7 +29,7 @@ class MarkersShow extends Component {
           >
             {this.props.marker.info === true &&
               <InfoWindow>
-                <h3>Info</h3>
+                <InfoWindowShow />
               </InfoWindow>
             }
           </Marker>
