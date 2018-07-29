@@ -13,6 +13,7 @@ class App extends Component {
     markers: [],
     showingLocations: [],
     showingMarkers: [],
+    currentLocation: '',
     keysAPI: {
       'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
       'YelpReviews': 'JqyqCkdIzkAOtbIdzpjj4_e127n38Y99fWz4N8XeaomfEr-SAgRwfEjxfdQZYAWvHqWPK72omnhUFl_zX0orvNrDBqLxPQByMhV1IkEPbhZlXm2Vj-Z28PmgJNBcW3Yx'
@@ -38,6 +39,9 @@ class App extends Component {
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
+  passId = (id) => {
+    this.setState({currentLocation: id})
+  }
   render() {
     return (
       <div className="App">
@@ -58,6 +62,7 @@ class App extends Component {
         />
         <ListLocations
           showingLocations={this.state.showingLocations}
+          passId={this.passId}
         />
       </div>
     );

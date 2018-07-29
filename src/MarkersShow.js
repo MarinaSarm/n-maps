@@ -10,13 +10,20 @@ class MarkersShow extends Component {
     infoState = infoState === true ? false : true
     this.setState({info: infoState})
   }
+  showInfo = () => {
+    this.setState({info: true})
+  }
+  closeInfo = () => {
+    this.setState({info: false})
+  }
   render() {
     return(
       <div>
-
           <Marker
             position={this.props.marker.position}
             onClick={this.toggleMarkers}
+            onMouseOver={this.showInfo}
+            onMouseOut={this.closeInfo}
           >
             {this.state.info === true &&
               <InfoWindow>
@@ -24,7 +31,6 @@ class MarkersShow extends Component {
               </InfoWindow>
             }
           </Marker>
-
       </div>
     )
   }

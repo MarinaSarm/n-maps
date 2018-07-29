@@ -15,6 +15,7 @@ class ListLocations extends Component {
             >
               <LocationOnList
                 location={location}
+                passId={this.props.passId}
               />
             </li>
           ))}

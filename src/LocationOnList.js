@@ -7,9 +7,11 @@ class LocationOnList extends Component {
     }
   }
   highlightLocation = () => {
+    this.props.passId(this.props.location.id)
     this.setState({locationStyle: {backgroundColor: 'yellow'}})
   }
   returnStyleLocation = () => {
+    this.props.passId('')
     this.setState({locationStyle: {backgroundColor: 'red'}})
   }
   render(){
