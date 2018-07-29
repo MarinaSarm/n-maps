@@ -42,6 +42,14 @@ class App extends Component {
   passId = (id) => {
     this.setState({currentLocation: id})
   }
+  updateInfoMarker = (id, info) => {
+    this.state.showingMarkers.map((marker) => {
+       if (marker.id === id) {
+         marker.info = info
+       }
+       return marker
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -55,6 +63,8 @@ class App extends Component {
           showInfoToggle={this.showInfoToggle}
           markers={this.state.markers}
           passId={this.passId}
+          updateInfoMarker={this.updateInfoMarker}
+          currentLocation={this.state.currentLocation}
         />
         <SearchPlace
           locations={this.state.locations}
@@ -64,6 +74,8 @@ class App extends Component {
         <ListLocations
           showingLocations={this.state.showingLocations}
           passId={this.passId}
+          updateInfoMarker={this.updateInfoMarker}
+          currentLocation={this.state.currentLocation}
         />
       </div>
     );

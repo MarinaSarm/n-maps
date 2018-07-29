@@ -23,6 +23,8 @@ const MapContainer = compose(
             markers={props.markers}
             marker={marker}
             passId={props.passId}
+            updateInfoMarker={props.updateInfoMarker}
+            currentLocation={props.currentLocation}
           />
           ))
         }

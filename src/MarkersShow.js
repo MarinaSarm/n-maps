@@ -3,7 +3,7 @@ import { Marker, InfoWindow } from "react-google-maps"
 
 class MarkersShow extends Component {
   state = {
-    info: false
+    info: this.props.marker.info
   }
   toggleMarkers = () => {
     let infoState = this.state.info
@@ -13,10 +13,12 @@ class MarkersShow extends Component {
   showInfo = () => {
     this.setState({info: true})
     this.props.passId(this.props.marker.id)
+    this.props.updateInfoMarker(this.props.marker.id, this.state.info)
   }
   closeInfo = () => {
     this.setState({info: false})
     this.props.passId('')
+    this.props.updateInfoMarker(this.props.marker.id, this.state.info)
   }
   render() {
     return(
@@ -27,7 +29,7 @@ class MarkersShow extends Component {
             onMouseOver={this.showInfo}
             onMouseOut={this.closeInfo}
           >
-            {this.state.info === true &&
+            {this.props.marker.info === true &&
               <InfoWindow>
                 <h3>Info</h3>
               </InfoWindow>
