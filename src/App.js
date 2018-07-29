@@ -29,7 +29,9 @@ class App extends Component {
       let markerTitle = location.name
       let markerId = location.id
       locationState.push({location: location, id: markerId})
-      markerState.push({position: markerLocation, title: markerTitle, id: markerId})
+      /* here store also info about infowindow setState
+      */
+      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
   }
@@ -46,6 +48,8 @@ class App extends Component {
           containerElement={<div style={{ height: `80vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
           showingMarkers={this.state.showingMarkers}
+          showInfoToggle={this.showInfoToggle}
+          markers={this.state.markers}
         />
         <SearchPlace
           locations={this.state.locations}
