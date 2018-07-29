@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LocationOnList from './LocationOnList'
 
 class ListLocations extends Component {
   render(){
@@ -9,8 +10,12 @@ class ListLocations extends Component {
         </header>
         <ul className='locations-list'>
           {this.props.showingLocations.map((location) => (
-            <li key={location.id} className='restaurant-list-item'>
-              {location.location.name}
+            <li
+              key={location.id}
+            >
+              <LocationOnList
+                location={location}
+              />
             </li>
           ))}
         </ul>

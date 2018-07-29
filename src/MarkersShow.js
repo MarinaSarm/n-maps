@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { GoogleMap, Marker, withGoogleMap, withScriptjs, InfoWindow } from "react-google-maps"
+import { Marker, InfoWindow } from "react-google-maps"
 
 class MarkersShow extends Component {
   state = {
@@ -7,7 +7,7 @@ class MarkersShow extends Component {
   }
   toggleMarkers = () => {
     let infoState = this.state.info
-    infoState = infoState == true ? false : true
+    infoState = infoState === true ? false : true
     this.setState({info: infoState})
   }
   render() {
