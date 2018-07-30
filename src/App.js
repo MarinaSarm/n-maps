@@ -7,18 +7,19 @@ import ListLocations from './ListLocations'
 */
 import Restaurants from './restaurants'
 
+const keysAPI = {
+  'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
+  'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
+  'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
+}
+
 class App extends Component {
   state = {
     locations: [],
     markers: [],
     showingLocations: [],
     showingMarkers: [],
-    resultFoursquare: [],
-    keysAPI: {
-      'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
-      'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
-      'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
-    }
+    resultFoursquare: []
   }
   fetchRestaurants = (url) => {
     return new Promise((resolve, reject) => {
@@ -50,7 +51,7 @@ class App extends Component {
     /*fetch results from Foursquare
     */
 
-  //   const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${this.state['keysAPI']['FoursquareClient']}&client_secret=${this.state['keysAPI']['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
+  //   const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${keysAPI['FoursquareClient']}&client_secret=${keysAPI['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
   //
   //   this.fetchRestaurants(urlArray)
   //       .then(resp => {
@@ -101,8 +102,7 @@ class App extends Component {
       <div className="App">
         <div id="Error" />
         <MapContainer
-          GoogleKey={this.state.keysAPI['GoogleMaps']}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.state.keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `80vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
