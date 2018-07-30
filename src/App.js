@@ -7,12 +7,6 @@ import ListLocations from './ListLocations'
 */
 import Restaurants from './restaurants'
 
-// const keysAPI = {
-//   'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
-//   'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
-//   'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
-// }
-
 class App extends Component {
   state = {
     locations: [],
@@ -55,6 +49,7 @@ class App extends Component {
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
 
     /*fetch results for 20 restaurants in Bremen from Foursquare in radius 3km
+    * This loads async and if something goes wrong the initial set will be displayed
     */
     const urlArray = `https://api.foursquare.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${this.keysAPI('FoursquareClient')}&client_secret=${this.keysAPI('FoursquareSecret')}&v=20180729&radius=3000&limit=20`
 
@@ -63,6 +58,7 @@ class App extends Component {
           const results = resp.response.venues
           console.log(results)
           let details = results.map((restaurant) => {
+            /* I save data in the same format as pre-loaded set of restaurants*/
             let info = {}
             info['location'] = {'geometry': {'location': {'lat': '', 'lng': ''}}}
             info['location']['geometry']['location']['lat'] = restaurant['location']['lat']
@@ -89,9 +85,11 @@ class App extends Component {
       document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
     }
   }
+  /* this function for search functionality*/
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
+  /* these 2 functions to stay in sinc between clicked marker and clicked list item*/
   updateInfoMarker = (id, info, animation) => {
     let newMarkers = this.state.showingMarkers.map((marker) => {
        if (marker.id === id) {

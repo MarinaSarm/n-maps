@@ -8,6 +8,7 @@ class MarkersShow extends Component {
     show: false,
     animation: 2
   }
+  /* function to indicate selected item in list and on map*/
   toggleInfo = () => {
     if (this.state.show === true) {
       this.props.updateInfoMarker(this.props.marker.id, false, null)

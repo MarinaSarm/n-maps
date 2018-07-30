@@ -36,6 +36,7 @@ class ShowInfo extends Component {
         {this.props.showingLocations.filter((location) =>
           location.id === this.props.marker.id
         ).map((location) => (
+          /* Show detailed info if available */
           <div key={location.id}>
             <h3>{location.location.name}</h3>
             <p>{location.location.formatted_address}</p>
