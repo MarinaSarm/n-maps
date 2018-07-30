@@ -9,20 +9,6 @@ class ListLocations extends Component {
           <h2>Restaurants</h2>
         </header>
         <ul className='locations-list'>
-        {/*this.props.resultFoursquare.length > 0 &&
-          this.props.resultFoursquare.map((location) => (
-            <li
-              key={location.id}
-            >
-              <LocationOnList
-                location={location}
-                updateInfoMarker={this.props.updateInfoMarker}
-                updateLocationStyle={this.props.updateLocationStyle}
-              />
-            </li>
-          ))}
-          {this.props.resultFoursquare &&
-          */}
           {this.props.showingLocations.map((location) => (
             <li
               key={location.id}

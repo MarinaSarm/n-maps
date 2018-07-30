@@ -10,7 +10,8 @@ class ShowInfo extends Component {
           <div key={location.id}>
             <h3>{location.location.name}</h3>
             <p>{location.location.formatted_address}</p>
-            <p>Rating: {location.location.rating}</p>
+            {(location.location.rating) &&
+            <p>Rating: location.location.rating</p>}
           </div>
         ))}
       </div>

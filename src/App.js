@@ -24,7 +24,7 @@ class App extends Component {
   fetchRestaurants = (url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
-         .then(response => {if (response.ok) {return response.json()} reject('Your API quota exceeded')})
+         .then(response => {if (response.ok) {return response.json()} reject('Your request for restaurant to Foursquare is not excepted. Probably, API quota is exceeded')})
          .then((data) => {if (data) resolve(data)})
          .catch(e => reject(e, 'Error when getting the restaurants details'))
     })
@@ -47,34 +47,41 @@ class App extends Component {
       markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
-  }
-    /*fetch results from Foursquare
-    */
 
-  //   const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${keysAPI['FoursquareClient']}&client_secret=${keysAPI['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
-  //
-  //   this.fetchRestaurants(urlArray)
-  //       .then(resp => {
-  //         const results = resp.response
-  //         console.log(results)
-  //         let details = results.map((restaurant) => {
-  //           let info = {}
-  //           info['location']['geometry'] = {'location': {'lat': '', 'lng': ''}}
-  //           info['location']['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
-  //           info['location']['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
-  //           info['id'] = restaurant['venue']['id']
-  //           info['location']['formatted_address'] = restaurant['venue']['location']['formattedAddress'].join(', ')
-  //           info['location']['name'] = restaurant['venue']['name']
-  //           return info
-  //         })
-  //         this.setState({resultFoursquare: details})
-  //       }).catch(err => requestError(err, 'with getting restaurants info'))
-  //
-  //   function requestError(e, part) {
-  //     console.log(e);
-  //     document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
-  //   }
-  // }
+    /*fetch results for 20 restaurants in Bremen from Foursquare in radius 3km
+    */
+    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${keysAPI['FoursquareClient']}&client_secret=${keysAPI['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
+
+    this.fetchRestaurants(urlArray)
+        .then(resp => {
+          const results = resp.response.venues
+          console.log(results)
+          let details = results.map((restaurant) => {
+            let info = {}
+            info['location'] = {'geometry': {'location': {'lat': '', 'lng': ''}}}
+            info['location']['geometry']['location']['lat'] = restaurant['location']['lat']
+            info['location']['geometry']['location']['lng'] = restaurant['location']['lng']
+            info['id'] = restaurant['id']
+            info['location']['formatted_address'] = restaurant['location']['formattedAddress'].join(', ')
+            info['location']['name'] = restaurant['name']
+            info['locationStyle'] = {backgroundColor: 'red'}
+            return info
+          })
+          const newMarkerState = []
+          details.map((location) => {
+            let markerLocation = location.location.geometry.location
+            let markerTitle = location.location.name
+            let markerId = location.id
+            newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
+          })
+          this.setState({resultFoursquare: details, showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState})
+        }).catch(err => requestError(err, 'with getting restaurants info'))
+
+    function requestError(e, part) {
+      console.log(e);
+      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
+    }
+  }
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
@@ -122,6 +129,7 @@ class App extends Component {
           showingLocations={this.state.showingLocations}
           updateInfoMarker={this.updateInfoMarker}
           updateLocationStyle={this.updateLocationStyle}
+          resultFoursquare={this.state.resultFoursquare}
         />
       </div>
     );
