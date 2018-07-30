@@ -46,33 +46,34 @@ class App extends Component {
       markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
+  }
     /*fetch results from Foursquare
     */
 
-    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${this.state['keysAPI']['FoursquareClient']}&client_secret=${this.state['keysAPI']['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
-
-    this.fetchRestaurants(urlArray)
-        .then(resp => {
-          const results = resp.response
-          console.log(results)
-          let details = results.map((restaurant) => {
-            let info = {}
-            info['geometry'] = {'location': {'lat': '', 'lng': ''}}
-            info['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
-            info['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
-            info['id'] = restaurant['venue']['id']
-            info['formatted_address'] = restaurant['venue']['location']['formattedAddress'].join(', ')
-            info['name'] = restaurant['venue']['name']
-            return info
-          })
-          this.setState({resultFoursquare: details})
-        }).catch(err => requestError(err, 'with getting restaurants info'))
-
-    function requestError(e, part) {
-      console.log(e);
-      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
-    }
-  }
+  //   const urlArray = `https://api.foursquare.com/v2/venues/search?ll=$53.0793,8.8017&intent=browse&client_id=${this.state['keysAPI']['FoursquareClient']}&client_secret=${this.state['keysAPI']['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
+  //
+  //   this.fetchRestaurants(urlArray)
+  //       .then(resp => {
+  //         const results = resp.response
+  //         console.log(results)
+  //         let details = results.map((restaurant) => {
+  //           let info = {}
+  //           info['location']['geometry'] = {'location': {'lat': '', 'lng': ''}}
+  //           info['location']['geometry']['location']['lat'] = restaurant['venue']['location']['lat']
+  //           info['location']['geometry']['location']['lng'] = restaurant['venue']['location']['lng']
+  //           info['id'] = restaurant['venue']['id']
+  //           info['location']['formatted_address'] = restaurant['venue']['location']['formattedAddress'].join(', ')
+  //           info['location']['name'] = restaurant['venue']['name']
+  //           return info
+  //         })
+  //         this.setState({resultFoursquare: details})
+  //       }).catch(err => requestError(err, 'with getting restaurants info'))
+  //
+  //   function requestError(e, part) {
+  //     console.log(e);
+  //     document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
+  //   }
+  // }
   updateShowingLocations = (showingLocations, showingMarkers) => {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
