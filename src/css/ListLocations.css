@@ -31,9 +31,9 @@ header.open {
   display: none;
 }
 
-.list_toggle {
+.list-toggle {
   cursor: pointer;
-  padding: 0;
+  padding: 20px;
   background-color: rgba(249, 255, 64, 0.9);
 }
 
@@ -52,4 +52,14 @@ header.open {
 /* show list */
 .locations-list.open {
   transform: translate(0, 0);
+}
+
+@media only screen and (min-width: 800px) {
+  header.close,
+  .locations-list.close {
+    transform: translate(0, 0);
+  }
+  .list-toggle {
+    display: none;
+  }
 }
