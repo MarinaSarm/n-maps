@@ -38,7 +38,7 @@ class SearchPlace extends Component {
       <div id="search">
         <input
           type="text"
-          placeholder="Search interesting places"
+          placeholder="Search restaurant by name"
           value={this.state.query}
           onChange={(event) => this.updateQuery(event.target.value)}
         />

@@ -31,10 +31,12 @@ class MarkersShow extends Component {
               <InfoWindow
                 showingLocations={this.props.showingLocations}
                 marker={this.props.marker}
+                keysAPI={this.props.keysAPI}
               >
                 <ShowInfo
                   showingLocations={this.props.showingLocations}
                   marker={this.props.marker}
+                  keysAPI={this.props.keysAPI}
                 />
               </InfoWindow>
             }

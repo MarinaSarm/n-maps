@@ -7,24 +7,30 @@ import ListLocations from './ListLocations'
 */
 import Restaurants from './restaurants'
 
-const keysAPI = {
-  'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
-  'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
-  'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
-}
+// const keysAPI = {
+//   'GoogleMaps': 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w',
+//   'FoursquareSecret': '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL',
+//   'FoursquareClient': 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
+// }
 
 class App extends Component {
   state = {
     locations: [],
     markers: [],
     showingLocations: [],
-    showingMarkers: [],
-    resultFoursquare: []
+    showingMarkers: []
   }
+/*function to store keys*/
+  keysAPI = (name) => {
+    if (name === 'GoogleMaps') return 'AIzaSyAbAAsS7Hhe1k-bnddQpHAVoJ7rBJOzE_w'
+    if (name === 'FoursquareSecret') return '3FKKEP3MTVOMBDKZ0UBHNXRFPIDUOOH30410MJQJS0KOKARL'
+    if (name === 'FoursquareClient') return 'VLUO0QACM520F2BVXSGEW5GETCB42VF2Q3IDCTZGRNINB3Z0'
+  }
+/*function to get restaurants in bremen*/
   fetchRestaurants = (url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
-         .then(response => {if (response.ok) {return response.json()} reject('Your request for restaurant to Foursquare is not excepted. Probably, API quota is exceeded')})
+         .then(response => {if (response.ok) {return response.json()} reject('Your request for restaurant to Foursquare is not excepted. Probably, API quota is exceeded or authentification fails')})
          .then((data) => {if (data) resolve(data)})
          .catch(e => reject(e, 'Error when getting the restaurants details'))
     })
@@ -50,7 +56,7 @@ class App extends Component {
 
     /*fetch results for 20 restaurants in Bremen from Foursquare in radius 3km
     */
-    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${keysAPI['FoursquareClient']}&client_secret=${keysAPI['FoursquareSecret']}&v=20180729&radius=3000&limit=20`
+    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${this.keysAPI('FoursquareClient')}&client_secret=${this.keysAPI('FoursquareSecret')}&v=20180729&radius=3000&limit=20`
 
     this.fetchRestaurants(urlArray)
         .then(resp => {
@@ -74,8 +80,9 @@ class App extends Component {
             let markerId = location.id
             newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
           })
-          this.setState({resultFoursquare: details, showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState})
-        }).catch(err => requestError(err, 'with getting restaurants info'))
+          this.setState({showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState})
+        })
+        .catch(err => requestError(err, 'with getting restaurants info'))
 
     function requestError(e, part) {
       console.log(e);
@@ -109,7 +116,7 @@ class App extends Component {
       <div className="App">
         <div id="Error" />
         <MapContainer
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${keysAPI['GoogleMaps']}&v=3.exp&libraries=geometry,drawing,places`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.keysAPI('GoogleMaps')}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `80vh` }} />}
           mapElement={<div style={{ height: `100%` }} />}
@@ -119,6 +126,7 @@ class App extends Component {
           markers={this.state.markers}
           updateInfoMarker={this.updateInfoMarker}
           updateLocationStyle={this.updateLocationStyle}
+          keysAPI={this.keysAPI}
         />
         <SearchPlace
           locations={this.state.locations}

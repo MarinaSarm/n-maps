@@ -24,6 +24,7 @@ const MapContainer = compose(
             showingLocations={props.showingLocations}
             updateInfoMarker={props.updateInfoMarker}
             updateLocationStyle={props.updateLocationStyle}
+            keysAPI={props.keysAPI}
           />
           ))
         }
