@@ -1,0 +1,55 @@
+/* some iconic fonts */
+@import url(http://weloveiconfonts.com/api/?family=entypo|iconicstroke);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: "entypo", sans-serif;
+  font-size: 2em;
+}
+
+#list-locations {
+  width: 300px;
+  font-size: 16px;
+}
+
+header {
+  font: 100 12px arial, sans-serif;
+  text-align: left;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: #66203b;
+  margin-left: 10px;
+  transition: transform 0.1s ease-in-out;
+}
+header.close {
+  transform: translate(-300px, 0);
+}
+header.open {
+  transform: translate(0, 0);
+}
+
+#hamburger_open {
+  display: none;
+}
+
+.list_toggle {
+  cursor: pointer;
+  padding: 0;
+  background-color: rgba(249, 255, 64, 0.9);
+}
+
+.locations-list {
+  padding: 10px;
+  margin: 10px;
+  list-style: none;
+  transition: transform 0.1s ease-in-out;
+  background-color: rgba(249, 255, 64, 0.9);
+  line-height: 24px;
+}
+
+.locations-list.close {
+  transform: translate(-300px, 0);
+}
+/* show list */
+.locations-list.open {
+  transform: translate(0, 0);
+}

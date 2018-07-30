@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import MapContainer from './MapContainer'
 import SearchPlace from './SearchPlace'
 import ListLocations from './ListLocations'
@@ -51,7 +51,7 @@ class App extends Component {
     /*fetch results for 20 restaurants in Bremen from Foursquare in radius 3km
     * This loads async and if something goes wrong the initial set will be displayed
     */
-    const urlArray = `https://api.foursquare.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${this.keysAPI('FoursquareClient')}&client_secret=${this.keysAPI('FoursquareSecret')}&v=20180729&radius=3000&limit=20`
+    const urlArray = `https://api.foursquar.com/v2/venues/search?ll=53.0793,8.8017&intent=ckeckin&categoryId=4d4b7105d754a06374d81259&client_id=${this.keysAPI('FoursquareClient')}&client_secret=${this.keysAPI('FoursquareSecret')}&v=20180729&radius=3000&limit=20`
 
     this.fetchRestaurants(urlArray)
         .then(resp => {
