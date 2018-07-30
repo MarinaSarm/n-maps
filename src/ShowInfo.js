@@ -41,6 +41,13 @@ class ShowInfo extends Component {
             <p>{location.location.formatted_address}</p>
             {(location.location.rating) &&
             <p>Rating: location.location.rating</p>}
+            {(this.state.photo) &&
+            <figure>
+              <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
+              {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
+              <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
+            </figure>
+            }
           </div>
         ))}
       </div>
