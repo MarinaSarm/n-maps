@@ -1,3 +1,33 @@
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 95vw;
+}
+
+header h1 {
+  width: 90vw;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#list {
+  width: 300px;
+}
+
+#Error {
+  width: 90%;
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (min-width: 800px) {
+  #list {
+    width: 35vw;
+  }
 }

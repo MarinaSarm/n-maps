@@ -112,13 +112,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div id="Error" />
-        <div id="map">
+        <header>
+          <h1>Discover Restaurants in Bremen!</h1>
+        </header>
+        <div id="list">
+          <SearchPlace
+            locations={this.state.locations}
+            markers={this.state.markers}
+            updateShowingLocations={this.updateShowingLocations}
+          />
+          <ListLocations
+            showingLocations={this.state.showingLocations}
+            updateInfoMarker={this.updateInfoMarker}
+            updateLocationStyle={this.updateLocationStyle}
+            resultFoursquare={this.state.resultFoursquare}
+          />
+        </div>
+        <div id="map" role="application" aria-label="Map with all restaurants">
           <MapContainer
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.keysAPI('GoogleMaps')}&v=3.exp&libraries=geometry,drawing,places`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%`, width: `100%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `90%` }} />}
             showingMarkers={this.state.showingMarkers}
             showingLocations={this.state.showingLocations}
             showInfoToggle={this.showInfoToggle}
@@ -128,17 +143,7 @@ class App extends Component {
             keysAPI={this.keysAPI}
           />
         </div>
-        <SearchPlace
-          locations={this.state.locations}
-          markers={this.state.markers}
-          updateShowingLocations={this.updateShowingLocations}
-        />
-        <ListLocations
-          showingLocations={this.state.showingLocations}
-          updateInfoMarker={this.updateInfoMarker}
-          updateLocationStyle={this.updateLocationStyle}
-          resultFoursquare={this.state.resultFoursquare}
-        />
+        <div id="Error" />
       </div>
     );
   }
