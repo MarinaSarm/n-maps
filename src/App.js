@@ -113,19 +113,21 @@ class App extends Component {
     return (
       <div className="App">
         <div id="Error" />
-        <MapContainer
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.keysAPI('GoogleMaps')}&v=3.exp&libraries=geometry,drawing,places`}
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `80vh` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-          showingMarkers={this.state.showingMarkers}
-          showingLocations={this.state.showingLocations}
-          showInfoToggle={this.showInfoToggle}
-          markers={this.state.markers}
-          updateInfoMarker={this.updateInfoMarker}
-          updateLocationStyle={this.updateLocationStyle}
-          keysAPI={this.keysAPI}
-        />
+        <div id="map">
+          <MapContainer
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.keysAPI('GoogleMaps')}&v=3.exp&libraries=geometry,drawing,places`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%`, width: `100%` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            showingMarkers={this.state.showingMarkers}
+            showingLocations={this.state.showingLocations}
+            showInfoToggle={this.showInfoToggle}
+            markers={this.state.markers}
+            updateInfoMarker={this.updateInfoMarker}
+            updateLocationStyle={this.updateLocationStyle}
+            keysAPI={this.keysAPI}
+          />
+        </div>
         <SearchPlace
           locations={this.state.locations}
           markers={this.state.markers}

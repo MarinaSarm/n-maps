@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleMap, withGoogleMap, withScriptjs } from "react-google-maps"
 import { compose } from 'recompose'
 import MarkersShow from './MarkersShow'
+import './css/MapContainer.css'
 
 /*
 * code followed documentation for react-google-maps https://tomchentw.github.io/react-google-maps/
@@ -11,7 +12,7 @@ const MapContainer = compose(
   withGoogleMap
 )((props) => {
     return (
-        <GoogleMap
+      <GoogleMap
           defaultZoom={12}
           defaultCenter={{ lat: 53.0793, lng: 8.8017}}
         >
@@ -28,7 +29,7 @@ const MapContainer = compose(
           />
           ))
         }
-        </GoogleMap>
+      </GoogleMap>
     )
   }
 )
