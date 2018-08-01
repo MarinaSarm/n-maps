@@ -12,7 +12,8 @@ class App extends Component {
     locations: [],
     markers: [],
     showingLocations: [],
-    showingMarkers: []
+    showingMarkers: [],
+    foursquare: false
   }
 /*function to store keys*/
   keysAPI = (name) => {
@@ -30,6 +31,9 @@ class App extends Component {
     })
   }
   componentDidMount() {
+    window.gm_authFailure = function () {
+     alert('authentification for google maps did not pass')
+    }
     /* place initial set of restaurants locations and markers to state
     */
     const locations = Restaurants
@@ -76,7 +80,7 @@ class App extends Component {
             let markerId = location.id
             newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
           })
-          this.setState({showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState})
+          this.setState({showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState, foursquare: true})
         })
         .catch(err => requestError(err, 'with getting restaurants info'))
 
@@ -138,6 +142,7 @@ class App extends Component {
             showingLocations={this.state.showingLocations}
             showInfoToggle={this.showInfoToggle}
             markers={this.state.markers}
+            foursquare={this.state.foursquare}
             updateInfoMarker={this.updateInfoMarker}
             updateLocationStyle={this.updateLocationStyle}
             keysAPI={this.keysAPI}

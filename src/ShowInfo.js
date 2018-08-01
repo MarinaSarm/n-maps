@@ -38,12 +38,12 @@ class ShowInfo extends Component {
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div>
+              <div key={location.id}>
                 <h3>{location.location.name}</h3>
                 <p tabIndex={0} id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
-                <p>Rating: location.location.rating</p>}
-                {(this.state.photo) &&
+                <p>Rating: {location.location.rating}</p>}
+                {(this.props.foursquare) &&
                 <figure>
                   <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
                   {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&

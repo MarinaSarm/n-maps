@@ -22,6 +22,7 @@ const MapContainer = compose(
             showInfoToggle={props.showInfoToggle}
             showingMarkers={props.showingMarkers}
             marker={marker}
+            foursquare={props.foursquare}
             showingLocations={props.showingLocations}
             updateInfoMarker={props.updateInfoMarker}
             updateLocationStyle={props.updateLocationStyle}
