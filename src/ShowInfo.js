@@ -28,7 +28,8 @@ class ShowInfo extends Component {
     .catch(err => requestError(err, 'with getting restaurant photo'))
     function requestError(e, part) {
       console.log(e);
-      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs.</p>`);
+      alert(`There was an error ${part}. For more detailes see logs.`)
+      // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs.</p>`);
     }
   }
   render(){

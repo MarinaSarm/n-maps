@@ -86,7 +86,8 @@ class App extends Component {
 
     function requestError(e, part) {
       console.log(e);
-      document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
+      alert(`There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!`)
+      // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
     }
   }
   /* this function for search functionality*/
