@@ -22,7 +22,6 @@ class MarkersShow extends Component {
   }
   render() {
     return(
-      <div>
           <Marker
             position={this.props.marker.position}
             onClick={this.toggleInfo}
@@ -42,7 +41,6 @@ class MarkersShow extends Component {
               </InfoWindow>
             }
           </Marker>
-      </div>
     )
   }
 }

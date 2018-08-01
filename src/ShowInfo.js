@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class ShowInfo extends Component {
   state = {
@@ -32,26 +33,29 @@ class ShowInfo extends Component {
   }
   render(){
     return(
-      <div>
-        {this.props.showingLocations.filter((location) =>
-          location.id === this.props.marker.id
-        ).map((location) => (
-          /* Show detailed info if available */
-          <div key={location.id}>
-            <h3>{location.location.name}</h3>
-            <p>{location.location.formatted_address}</p>
-            {(location.location.rating) &&
-            <p>Rating: location.location.rating</p>}
-            {(this.state.photo) &&
-            <figure>
-              <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
-              {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
-              <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
-            </figure>
-            }
-          </div>
-        ))}
-      </div>
+        <div>
+          {this.props.showingLocations.filter((location) =>
+            location.id === this.props.marker.id
+          ).map((location) => (
+            /* Show detailed info if available */
+              <div>
+                <h3>{location.location.name}</h3>
+                <p tabIndex={0} id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
+                {(location.location.rating) &&
+                <p>Rating: location.location.rating</p>}
+                {(this.state.photo) &&
+                <figure>
+                  <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
+                  {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
+                  <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
+                </figure>
+                }
+                <a href="#locations-list">
+                  Go to the list
+                </a>
+              </div>
+          ))}
+        </div>
     )
   }
 }

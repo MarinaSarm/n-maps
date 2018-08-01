@@ -24,7 +24,7 @@ class ListLocations extends Component {
         <header id="restaurant-list" className={this.state.check? "open": "close"}>
           <h2>List of Restaurants</h2>
         </header>
-        <ul tabIndex={0} role="listbox" aria-owns="list-item" aria-labelledby="restaurant-list" className={this.state.check? "locations-list open": "locations-list close"}>
+        <ul tabIndex={0} role="listbox" aria-labelledby="restaurant-list" id="locations-list" className={this.state.check? "locations-list open": "locations-list close"}>
           {this.props.showingLocations.map((location) => (
               <LocationOnList
                 key={location.id}

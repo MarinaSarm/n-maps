@@ -1,40 +1,49 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class LocationOnList extends Component {
+  state = {
+    checkOnMap: false
+  }
   /* function to indicate selected item in list and on map*/
   toggleHihglight = () => {
     if (this.props.location.locationStyle.backgroundColor === 'yellow') {
       this.props.updateInfoMarker(this.props.location.id, false, null)
       this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'})
+      this.setState({checkOnMap: false})
     } else {
       this.props.updateInfoMarker(this.props.location.id, true, 1)
       this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'})
+      this.setState({checkOnMap: true})
     }
   }
   toggleHihglightByEnter = (event) => {
     if (event.key === 'Enter') {
-      if (this.props.location.locationStyle.backgroundColor === 'yellow') {
-        this.props.updateInfoMarker(this.props.location.id, false, null)
-        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'})
-      } else {
-        this.props.updateInfoMarker(this.props.location.id, true, 1)
-        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'})
-      }
+      this.toggleHihglight()
     }
   }
   render(){
     return(
         <li
           id="list-item"
-          tabIndex={0}
           role="option"
-          aria-label={`${this.props.location.name} restaurant`}
+          aria-selected="false"
+          aria-label={`${this.props.location.location.name} restaurant`}
           className='restaurant-list-item'
           style={this.props.location.locationStyle}
-          onClick={this.toggleHihglight}
-          onKeyDown={this.toggleHihglightByEnter}
         >
-          {this.props.location.location.name}
+          <p
+            id={`${this.props.location.location.name}-list`}
+            tabIndex={0}
+            onClick={this.toggleHihglight}
+            onKeyDown={this.toggleHihglightByEnter}
+          >
+            {this.props.location.location.name}
+          </p>
+          {this.state.checkOnMap &&
+          <a href={`#${this.props.location.location.name}-onmap`}>
+            check on map
+          </a>}
         </li>
     )
   }
