@@ -37,7 +37,7 @@ class LocationOnList extends Component {
           </p>
           {this.props.location.checkOnMap &&
             <a href={`#${this.props.location.location.name}-onmap`}>
-              Check on map =>
+              Check on map
             </a>
           }
         </li>

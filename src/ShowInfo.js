@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class ShowInfo extends Component {
@@ -34,6 +35,14 @@ class ShowInfo extends Component {
       // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs.</p>`);
     }
   }
+  handleTab = (event, ref) => {
+    if (event.keyCode === 9) {
+      event.preventDefault()
+      if (document.activeElement === ReactDOM.findDOMNode(this.refs.back)) {
+        ReactDOM.findDOMNode(this.refs.address).focus()
+      }
+    }
+  }
   render(){
     return(
         <div>
@@ -43,7 +52,7 @@ class ShowInfo extends Component {
             /* Show detailed info if available */
               <div key={location.id}>
                 <h3>{location.location.name}</h3>
-                <p tabIndex={0} id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
+                <p tabIndex={0} id={`${location.location.name}-onmap`} ref="address">{location.location.formatted_address}</p>
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
                 {(this.props.foursquare) &&
@@ -56,9 +65,14 @@ class ShowInfo extends Component {
                     </figure>
                   </div>
                 }
-                <a href="#locations-list">
+                <a onKeyDown={this.handleTab} href="#locations-list" ref="back">
                   Go to the list
                 </a>
+
+                {/*}<form action="#locations-list">
+                  <input type="submit" value="return to list" />
+                </form>
+                */}
               </div>
           ))}
         </div>
