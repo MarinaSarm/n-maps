@@ -34,6 +34,7 @@ class ShowInfo extends Component {
       alert(`There was an error ${part}. For more detailes see logs.`)
       // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs.</p>`);
     }
+      ReactDOM.findDOMNode(this.refs.address).focus()
   }
   handleTab = (event, ref) => {
     if (event.keyCode === 9) {
