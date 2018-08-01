@@ -16,16 +16,18 @@ class ShowInfo extends Component {
     })
   }
   componentDidMount(){
-    this.fetchImages(this.props.marker.id)
-    .then(resp => {
-      const results = resp.response.photos.items[0]
-      const photoData = {'imgSrc': '', 'user': {}, 'source': {}}
-      photoData['imgSrc'] = `${results['prefix']}${results['height']}x${results['width']}${results['suffix']}`
-      photoData['user'] = results['user']
-      photoData['source'] = results['source']
-      this.setState({photo: photoData})
-    })
-    .catch(err => requestError(err, 'with getting restaurant photo'))
+    if (this.props.foursquare) {
+      this.fetchImages(this.props.marker.id)
+      .then(resp => {
+        const results = resp.response.photos.items[0]
+        const photoData = {'imgSrc': '', 'user': {}, 'source': {}}
+        photoData['imgSrc'] = `${results['prefix']}${results['height']}x${results['width']}${results['suffix']}`
+        photoData['user'] = results['user']
+        photoData['source'] = results['source']
+        this.setState({photo: photoData})
+      })
+      .catch(err => requestError(err, 'with getting restaurant photo'))
+    }
     function requestError(e, part) {
       console.log(e);
       alert(`There was an error ${part}. For more detailes see logs.`)
@@ -45,11 +47,14 @@ class ShowInfo extends Component {
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
                 {(this.props.foursquare) &&
-                <figure>
-                  <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
-                  {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
-                  <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
-                </figure>
+                  <div>
+                    <p>Details from Foursquare.com</p>
+                    <figure>
+                      <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
+                      {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
+                      <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
+                    </figure>
+                  </div>
                 }
                 <a href="#locations-list">
                   Go to the list

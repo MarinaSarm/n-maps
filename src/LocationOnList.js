@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class LocationOnList extends Component {
-  state = {
-    checkOnMap: false
-  }
   /* function to indicate selected item in list and on map*/
   toggleHihglight = () => {
     if (this.props.location.locationStyle.backgroundColor === 'yellow') {
       this.props.updateInfoMarker(this.props.location.id, false, null)
-      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'})
-      this.setState({checkOnMap: false})
+      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'}, false)
     } else {
       this.props.updateInfoMarker(this.props.location.id, true, 1)
-      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'})
-      this.setState({checkOnMap: true})
+      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'}, true)
     }
   }
   toggleHihglightByEnter = (event) => {
@@ -40,10 +35,11 @@ class LocationOnList extends Component {
           >
             {this.props.location.location.name}
           </p>
-          {this.state.checkOnMap &&
-          <a href={`#${this.props.location.location.name}-onmap`}>
-            check on map
-          </a>}
+          {this.props.location.checkOnMap &&
+            <a href={`#${this.props.location.location.name}-onmap`}>
+              Check on map =>
+            </a>
+          }
         </li>
     )
   }

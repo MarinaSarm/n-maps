@@ -45,7 +45,7 @@ class App extends Component {
       let markerId = location.id
       locationState.push({location: location, id: markerId, locationStyle: {
         backgroundColor: 'red'
-      }})
+      }, checkOnMap: false})
       /* here store also info about infowindow setState
       */
       markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
@@ -71,6 +71,7 @@ class App extends Component {
             info['location']['formatted_address'] = restaurant['location']['formattedAddress'].join(', ')
             info['location']['name'] = restaurant['name']
             info['locationStyle'] = {backgroundColor: 'red'}
+            info['checkOnMap'] = false
             return info
           })
           const newMarkerState = []
@@ -97,18 +98,19 @@ class App extends Component {
   /* these 2 functions to stay in sinc between clicked marker and clicked list item*/
   updateInfoMarker = (id, info, animation) => {
     let newMarkers = this.state.showingMarkers.map((marker) => {
-       if (marker.id === id) {
+      if (marker.id === id) {
          marker.info = info
          marker.animation = animation
-       }
-       return marker
+      }
+      return marker
     })
     this.setState({showingMarkers: newMarkers})
   }
-  updateLocationStyle = (id, locationStyle) => {
+  updateLocationStyle = (id, locationStyle, check) => {
     let newLocations = this.state.showingLocations.map((location) => {
       if (location.id === id) {
         location.locationStyle = locationStyle
+        location.checkOnMap = check
       }
       return location
     })
@@ -131,6 +133,7 @@ class App extends Component {
             updateInfoMarker={this.updateInfoMarker}
             updateLocationStyle={this.updateLocationStyle}
             resultFoursquare={this.state.resultFoursquare}
+            markers={this.state.markers}
           />
         </div>
         <div id="map" role="application" aria-label="Map with all restaurants">

@@ -20,6 +20,11 @@ class MarkersShow extends Component {
       this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'yellow'})
     }
   }
+  closeInfo = () => {
+      this.props.updateInfoMarker(this.props.marker.id, false, null)
+      this.setState({show: false, animation: null})
+      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'red'})
+  }
   render() {
     return(
           <Marker
@@ -33,6 +38,7 @@ class MarkersShow extends Component {
                 marker={this.props.marker}
                 keysAPI={this.props.keysAPI}
                 foursquare={this.props.foursquare}
+                onCloseClick={this.closeInfo}
               >
                 <ShowInfo
                   showingLocations={this.props.showingLocations}
