@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/App.css';
 import MapContainer from './MapContainer'
 import SearchPlace from './SearchPlace'
-import ListLocations from './ListLocations'
 import ReactDOM from 'react-dom'
 /* import my initial set of restaurants, got with request for restaurants in Bremen
 */
@@ -36,6 +35,7 @@ class App extends Component {
     window.gm_authFailure = function () {
      alert('authentification for google maps did not pass')
     }
+    document.getElementsByTagName('iframe').title = "Google Maps"
     /* place initial set of restaurants locations and markers to state
     */
     const locations = Restaurants
@@ -50,7 +50,7 @@ class App extends Component {
       }, checkOnMap: false})
       /* here store also info about infowindow setState
       */
-      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
+      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
 
@@ -81,7 +81,7 @@ class App extends Component {
             let markerLocation = location.location.geometry.location
             let markerTitle = location.location.name
             let markerId = location.id
-            newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2})
+            newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false})
           })
           this.setState({showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState, foursquare: true})
         })
@@ -121,6 +121,15 @@ class App extends Component {
     })
     this.setState({showingLocations: newLocations})
   }
+  updateClick = (id, click) => {
+    let newMarkers = this.state.showingMarkers.map((marker) => {
+      if (marker.id === id) {
+         marker.click = click
+      }
+      return marker
+    })
+    this.setState({showingMarkers: newMarkers})
+  }
   currentActive = (node, ref) => {
     this.setState({focusedElement: [node, ref]})
   }
@@ -135,15 +144,15 @@ class App extends Component {
             locations={this.state.locations}
             markers={this.state.markers}
             updateShowingLocations={this.updateShowingLocations}
-          />
-          <ListLocations
             showingLocations={this.state.showingLocations}
             updateInfoMarker={this.updateInfoMarker}
             updateLocationStyle={this.updateLocationStyle}
             resultFoursquare={this.state.resultFoursquare}
-            markers={this.state.markers}
             currentActive={this.currentActive}
-          />
+            updateClick={this.updateClick}
+          >
+          {this.props.children}
+          </SearchPlace>
         </div>
         <div id="map" role="application" aria-label="Map with all restaurants">
           <MapContainer

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import PlacesAutocomplete from 'react-places-autocomplete'
 // import { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
 import escapeRegExp from 'escape-string-regexp'
+import ListLocations from './ListLocations'
 
 class SearchPlace extends Component {
   state = {
@@ -36,14 +37,25 @@ class SearchPlace extends Component {
   render(){
     return(
       <div id="search">
-        <form role="search">
-          <input
-            type="search"
-            placeholder="Search restaurant by name"
-            value={this.state.query}
-            onChange={(event) => this.updateQuery(event.target.value)}
-          />
-        </form>
+        <input
+          type="search"
+          placeholder="Search restaurant by name"
+          value={this.state.query}
+          onChange={(event) => this.updateQuery(event.target.value)}
+          id="search-input"
+        />
+        <label htmlFor="search-input" className="search-input">
+          Search
+        </label>
+        <ListLocations
+          showingLocations={this.props.showingLocations}
+          updateInfoMarker={this.props.updateInfoMarker}
+          updateLocationStyle={this.props.updateLocationStyle}
+          resultFoursquare={this.props.resultFoursquare}
+          markers={this.props.markers}
+          currentActive={this.props.currentActive}
+          updateClick={this.props.updateClick}
+        />
       </div>
     )
   }

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class ShowInfo extends Component {
   state = {
@@ -34,11 +32,12 @@ class ShowInfo extends Component {
       alert(`There was an error ${part}. For more detailes see logs.`)
     }
     //this is a hak to get focus to opened infowindow for keyboard users
-      setTimeout(() => {this.refs.address.focus()}, 1000)
+      setTimeout(() => {this.refs.address.focus()}, 1)
   }
   componentWillUnmount(){
-    // this.props.focusedElement[0].focus()
-    this.props.focusedElement[1].focus()
+    if (this.props.focusedElement[1]) {
+      this.props.focusedElement[1].focus()
+    }
   }
   /* handle tab trap */
   handleTab = (event, ref) => {
@@ -62,7 +61,7 @@ class ShowInfo extends Component {
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div tabIndex={0} key={location.id} ref="address" aria-role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
+              <div tabIndex={0} key={location.id} ref="address" role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
                 <h3 id={`${location.location.name}-for-map`}>{location.location.name}</h3>
                 <p id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
@@ -77,9 +76,10 @@ class ShowInfo extends Component {
                     </figure>
                   </div>
                 }
-                <a onKeyDown={this.handleTab} href="#locations-list" ref="back">
-                  back to list
-                </a>
+                  <a onKeyDown={this.handleTab} onClick={this.props.closeInfo} href="#locations-list" ref="back">
+                    back to list
+                  </a>
+
 
                 {/*}<form action="#locations-list">
                   <input type="submit" value="return to list" />
