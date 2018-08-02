@@ -55,6 +55,7 @@ class SearchPlace extends Component {
           markers={this.props.markers}
           currentActive={this.props.currentActive}
           updateClick={this.props.updateClick}
+          check={this.props.check}
         />
       </div>
     )

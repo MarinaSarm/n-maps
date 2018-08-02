@@ -14,7 +14,8 @@ class App extends Component {
     showingLocations: [],
     showingMarkers: [],
     foursquare: false,
-    focusedElement: []
+    focusedElement: [],
+    check: false
   }
 /*function to store keys*/
   keysAPI = (name) => {
@@ -137,12 +138,28 @@ class App extends Component {
   currentActive = (node, ref) => {
     this.setState({focusedElement: [node, ref]})
   }
+  toggleChange = () => {
+    if (this.state.check) {
+      this.setState({check: false})
+
+    } else {
+      this.setState({check: true})
+    }
+  }
   render() {
     return (
       <div className="App">
         <header>
           <h1>Discover Restaurants in Bremen!</h1>
         </header>
+        <button id="hamburger_open" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="List of restaurants" onClick={this.toggleChange}>
+        <span className="entypo-menu"></span>
+        </button>
+      {/*  <input type="checkbox" id="hamburger_open" onChange={this.toggleChange}/>
+        <label tabIndex={0} htmlFor="hamburger_open" className="list-toggle">
+          <span className="entypo-menu"></span>
+        </label>
+        */}
         <div id="list" ref="list">
           <SearchPlace
             locations={this.state.locations}
@@ -154,6 +171,7 @@ class App extends Component {
             resultFoursquare={this.state.resultFoursquare}
             currentActive={this.currentActive}
             updateClick={this.updateClick}
+            check={this.state.check}
           >
           {this.props.children}
           </SearchPlace>

@@ -16,6 +16,16 @@ header h1 {
   margin: 0;
 }
 
+#hamburger_open {
+  /* display: none; */
+}
+
+.list-toggle {
+  cursor: pointer;
+  padding: 20px;
+  background-color: rgba(249, 255, 64, 0.9);
+}
+
 #list {
   width: 300px;
 }
@@ -29,5 +39,8 @@ header h1 {
 @media only screen and (min-width: 800px) {
   #list {
     width: 35vw;
+  }
+  .list-toggle {
+    display: none;
   }
 }

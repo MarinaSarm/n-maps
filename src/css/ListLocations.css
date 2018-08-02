@@ -26,16 +26,6 @@ header.open {
   transform: translate(0, 0);
 }
 
-#hamburger_open {
-  display: none;
-}
-
-.list-toggle {
-  cursor: pointer;
-  padding: 20px;
-  background-color: rgba(249, 255, 64, 0.9);
-}
-
 .locations-list {
   padding: 10px;
   margin: 10px;
@@ -47,6 +37,7 @@ header.open {
 
 .locations-list.close {
   transform: translate(-300px, 0);
+  visibility: hidden;
 }
 /* show list */
 .locations-list.open {
@@ -57,8 +48,6 @@ header.open {
   header.close,
   .locations-list.close {
     transform: translate(0, 0);
-  }
-  .list-toggle {
-    display: none;
+    visibility: visible;
   }
 }
