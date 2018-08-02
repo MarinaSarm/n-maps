@@ -175,7 +175,6 @@ class App extends Component {
             focusedElement={this.state.focusedElement}
           />
         </div>
-        <div id="Error" />
       </div>
     );
   }

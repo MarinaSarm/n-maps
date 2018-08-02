@@ -31,8 +31,8 @@ class ShowInfo extends Component {
       console.log(e);
       alert(`There was an error ${part}. For more detailes see logs.`)
     }
-    //this is a hak to get focus to opened infowindow for keyboard users
-      setTimeout(() => {this.refs.address.focus()}, 1)
+    //this is a hack to get focus to opened infowindow for keyboard users
+    setTimeout(() => {this.refs.address.focus()}, 1000)
   }
   componentWillUnmount(){
     if (this.props.focusedElement[1]) {
@@ -61,9 +61,9 @@ class ShowInfo extends Component {
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div tabIndex={0} key={location.id} ref="address" role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
+              <div key={location.id} role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
                 <h3 id={`${location.location.name}-for-map`}>{location.location.name}</h3>
-                <p id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
+                <p tabIndex={0} ref="address" id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
                 {(this.props.foursquare) &&
