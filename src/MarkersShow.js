@@ -26,6 +26,9 @@ class MarkersShow extends Component {
       this.setState({show: false, animation: null, click: false})
       this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'red'}, false)
   }
+  componentDidMount(){
+  
+  }
   render() {
     return(
           <Marker

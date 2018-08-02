@@ -35,7 +35,11 @@ class App extends Component {
     window.gm_authFailure = function () {
      alert('authentification for google maps did not pass')
     }
-    document.getElementsByTagName('iframe').title = "Google Maps"
+    /* this is to pass a11y audit. Set the title to iframe element (can't figure out another way with react-google-maps)
+    */
+    window.onload = function() {
+      document.getElementsByTagName('iframe')[0].title = "Google Maps"
+    }
     /* place initial set of restaurants locations and markers to state
     */
     const locations = Restaurants
