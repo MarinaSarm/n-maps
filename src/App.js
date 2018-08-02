@@ -3,6 +3,7 @@ import './css/App.css';
 import MapContainer from './MapContainer'
 import SearchPlace from './SearchPlace'
 import ListLocations from './ListLocations'
+import ReactDOM from 'react-dom'
 /* import my initial set of restaurants, got with request for restaurants in Bremen
 */
 import Restaurants from './restaurants'
@@ -13,7 +14,8 @@ class App extends Component {
     markers: [],
     showingLocations: [],
     showingMarkers: [],
-    foursquare: false
+    foursquare: false,
+    focusedElement: null
   }
 /*function to store keys*/
   keysAPI = (name) => {
@@ -105,6 +107,9 @@ class App extends Component {
       return marker
     })
     this.setState({showingMarkers: newMarkers})
+    if (info === false) {
+      ReactDOM.findDOMNode(this.refs.list).focus()
+    }
   }
   updateLocationStyle = (id, locationStyle, check) => {
     let newLocations = this.state.showingLocations.map((location) => {
@@ -116,13 +121,16 @@ class App extends Component {
     })
     this.setState({showingLocations: newLocations})
   }
+  currentActive = (node) => {
+    this.setState({focusedElement: node})
+  }
   render() {
     return (
       <div className="App">
         <header>
           <h1>Discover Restaurants in Bremen!</h1>
         </header>
-        <div id="list">
+        <div id="list" ref="list">
           <SearchPlace
             locations={this.state.locations}
             markers={this.state.markers}
@@ -134,6 +142,7 @@ class App extends Component {
             updateLocationStyle={this.updateLocationStyle}
             resultFoursquare={this.state.resultFoursquare}
             markers={this.state.markers}
+            currentActive={this.currentActive}
           />
         </div>
         <div id="map" role="application" aria-label="Map with all restaurants">
@@ -150,6 +159,7 @@ class App extends Component {
             updateInfoMarker={this.updateInfoMarker}
             updateLocationStyle={this.updateLocationStyle}
             keysAPI={this.keysAPI}
+            focusedElement={this.state.focusedElement}
           />
         </div>
         <div id="Error" />

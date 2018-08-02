@@ -45,6 +45,8 @@ class MarkersShow extends Component {
                   marker={this.props.marker}
                   keysAPI={this.props.keysAPI}
                   foursquare={this.props.foursquare}
+                  closeInfo={this.closeInfo}
+                  focusedElement={this.props.focusedElement}
                 />
               </InfoWindow>
             }

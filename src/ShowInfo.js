@@ -32,15 +32,25 @@ class ShowInfo extends Component {
     function requestError(e, part) {
       console.log(e);
       alert(`There was an error ${part}. For more detailes see logs.`)
-      // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs.</p>`);
     }
-      ReactDOM.findDOMNode(this.refs.address).focus()
+    //this is a hak to get focus to opened infowindow for keyboard users
+      setTimeout(() => {this.refs.address.focus()}, 1000)
   }
+  componentWillUnmount(){
+    this.props.focusedElement.focus()
+  }
+  /* handle tab trap */
   handleTab = (event, ref) => {
     if (event.keyCode === 9) {
       event.preventDefault()
-      if (document.activeElement === ReactDOM.findDOMNode(this.refs.back)) {
-        ReactDOM.findDOMNode(this.refs.address).focus()
+      if (document.activeElement === this.refs.back) {
+        this.refs.address.focus()
+      }
+    }
+    if (event.keyCode === 13) {
+      event.preventDefault()
+      if (document.activeElement === this.refs.back) {
+        this.props.closeInfo()
       }
     }
   }
@@ -51,9 +61,9 @@ class ShowInfo extends Component {
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div key={location.id}>
+              <div tabIndex={0} key={location.id} ref="address">
                 <h3>{location.location.name}</h3>
-                <p tabIndex={0} id={`${location.location.name}-onmap`} ref="address">{location.location.formatted_address}</p>
+                <p id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
                 {(this.props.foursquare) &&

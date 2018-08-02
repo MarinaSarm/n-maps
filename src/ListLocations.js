@@ -16,7 +16,7 @@ class ListLocations extends Component {
   }
   render(){
     return(
-      <div id="list-locations">
+      <div id="list-locations" ref="list">
         <input type="checkbox" id="hamburger_open" onChange={this.toggleChange}/>
           <label htmlFor="hamburger_open" className="list-toggle">
             <span className="entypo-menu"></span>
@@ -31,6 +31,7 @@ class ListLocations extends Component {
                 location={location}
                 updateInfoMarker={this.props.updateInfoMarker}
                 updateLocationStyle={this.props.updateLocationStyle}
+                currentActive={this.props.currentActive}
               />
           ))}
         </ul>

@@ -15,6 +15,7 @@ class LocationOnList extends Component {
   }
   toggleHihglightByEnter = (event) => {
     if (event.key === 'Enter') {
+      this.props.currentActive(event.target)
       this.toggleHihglight()
     }
   }
@@ -36,11 +37,6 @@ class LocationOnList extends Component {
           >
             {this.props.location.location.name}
           </p>
-          {this.props.location.checkOnMap &&
-            <a href={`#${this.props.location.location.name}-onmap`}>
-              Check on map
-            </a>
-          }
         </li>
     )
   }

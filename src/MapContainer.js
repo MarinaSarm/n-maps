@@ -27,6 +27,7 @@ const MapContainer = compose(
             updateInfoMarker={props.updateInfoMarker}
             updateLocationStyle={props.updateLocationStyle}
             keysAPI={props.keysAPI}
+            focusedElement={props.focusedElement}
           />
           ))
         }
