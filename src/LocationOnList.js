@@ -15,28 +15,23 @@ class LocationOnList extends Component {
   }
   toggleHihglightByEnter = (event) => {
     if (event.key === 'Enter') {
-      this.props.currentActive(event.target)
+      this.props.currentActive(event.target, this.refs.current)
       this.toggleHihglight()
     }
   }
   render(){
     return(
         <li
-          id="list-item"
-          role="option"
-          aria-selected="false"
-          aria-label={`${this.props.location.location.name} restaurant`}
+          aria-label={`${this.props.location.location.name} restaurant check on map`}
           className='restaurant-list-item'
           style={this.props.location.locationStyle}
+          id={`${this.props.location.location.name}-list`}
+          tabIndex={0}
+          onClick={this.toggleHihglight}
+          onKeyDown={this.toggleHihglightByEnter}
+          ref="current"
         >
-          <p
-            id={`${this.props.location.location.name}-list`}
-            tabIndex={0}
-            onClick={this.toggleHihglight}
-            onKeyDown={this.toggleHihglightByEnter}
-          >
-            {this.props.location.location.name}
-          </p>
+          {this.props.location.location.name}
         </li>
     )
   }

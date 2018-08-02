@@ -37,7 +37,8 @@ class ShowInfo extends Component {
       setTimeout(() => {this.refs.address.focus()}, 1000)
   }
   componentWillUnmount(){
-    this.props.focusedElement.focus()
+    // this.props.focusedElement[0].focus()
+    this.props.focusedElement[1].focus()
   }
   /* handle tab trap */
   handleTab = (event, ref) => {
@@ -61,8 +62,8 @@ class ShowInfo extends Component {
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div tabIndex={0} key={location.id} ref="address">
-                <h3>{location.location.name}</h3>
+              <div tabIndex={0} key={location.id} ref="address" aria-role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
+                <h3 id={`${location.location.name}-for-map`}>{location.location.name}</h3>
                 <p id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
@@ -77,7 +78,7 @@ class ShowInfo extends Component {
                   </div>
                 }
                 <a onKeyDown={this.handleTab} href="#locations-list" ref="back">
-                  Go to the list
+                  back to list
                 </a>
 
                 {/*}<form action="#locations-list">

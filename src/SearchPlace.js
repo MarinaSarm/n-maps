@@ -36,12 +36,14 @@ class SearchPlace extends Component {
   render(){
     return(
       <div id="search">
-        <input
-          type="text"
-          placeholder="Search restaurant by name"
-          value={this.state.query}
-          onChange={(event) => this.updateQuery(event.target.value)}
-        />
+        <form role="search">
+          <input
+            type="search"
+            placeholder="Search restaurant by name"
+            value={this.state.query}
+            onChange={(event) => this.updateQuery(event.target.value)}
+          />
+        </form>
       </div>
     )
   }

@@ -15,7 +15,7 @@ class App extends Component {
     showingLocations: [],
     showingMarkers: [],
     foursquare: false,
-    focusedElement: null
+    focusedElement: []
   }
 /*function to store keys*/
   keysAPI = (name) => {
@@ -121,8 +121,8 @@ class App extends Component {
     })
     this.setState({showingLocations: newLocations})
   }
-  currentActive = (node) => {
-    this.setState({focusedElement: node})
+  currentActive = (node, ref) => {
+    this.setState({focusedElement: [node, ref]})
   }
   render() {
     return (
