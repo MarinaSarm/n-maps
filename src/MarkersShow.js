@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Marker, InfoWindow } from "react-google-maps"
-import './MarkersShow.css'
+import './css/MarkersShow.css'
 import ShowInfo from './ShowInfo'
 
 class MarkersShow extends Component {
@@ -14,20 +14,20 @@ class MarkersShow extends Component {
     if (this.state.show === true) {
       this.props.updateInfoMarker(this.props.marker.id, false, null)
       this.setState({show: false, animation: null, click: false})
-      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'red'}, false)
+      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: '#FFFF40'}, false)
     } else {
       this.props.updateInfoMarker(this.props.marker.id, true, 1)
       this.setState({show: true, animation: 1, click: true})
-      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'yellow'}, true)
+      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: '#FFFF73'}, true)
     }
   }
   closeInfo = () => {
       this.props.updateInfoMarker(this.props.marker.id, false, null)
       this.setState({show: false, animation: null, click: false})
-      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: 'red'}, false)
+      this.props.updateLocationStyle(this.props.marker.id, {backgroundColor: '#FFFF40'}, false)
   }
   componentDidMount(){
-  
+
   }
   render() {
     return(
@@ -43,6 +43,10 @@ class MarkersShow extends Component {
                 keysAPI={this.props.keysAPI}
                 foursquare={this.props.foursquare}
                 onCloseClick={this.closeInfo}
+                options={{
+                  padding: 0
+                }}
+                className="info-opened"
               >
                 <ShowInfo
                   showingLocations={this.props.showingLocations}

@@ -1,0 +1,18 @@
+#search-input {
+  height: 3em;
+  width: 300px;
+  font-size: 1em;
+}
+
+#showing-restaurants {
+  margin: 10px;
+}
+
+.show-of-total {
+  padding: 5px;
+  margin: 10px;
+}
+
+@media only screen and (min-width: 800px) {
+
+}

@@ -8,9 +8,9 @@
 
 #list-locations {
   font-size: 0.9em;
+  width: 300px;
 }
-
-header {
+header h2{
   font: 100 1em arial, sans-serif;
   text-align: left;
   padding-right: 10px;
@@ -19,35 +19,22 @@ header {
   margin-left: 10px;
   transition: transform 0.1s ease-in-out;
 }
-header.close {
-  transform: translate(-300px, 0);
+.restaurant-list {
+  font-size: 1.5em;
 }
-header.open {
-  transform: translate(0, 0);
-}
-
-.locations-list {
+#locations-list {
   padding: 10px;
   margin: 10px;
   list-style: none;
   transition: transform 0.1s ease-in-out;
-  background-color: rgba(249, 255, 64, 0.9);
+  background-color: #FFFF73;
   line-height: 1.5em;
-}
-
-.locations-list.close {
-  transform: translate(-300px, 0);
-  visibility: hidden;
-}
-/* show list */
-.locations-list.open {
-  transform: translate(0, 0);
+  font-size: 1.1em;
+  max-height: 80vh;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 @media only screen and (min-width: 800px) {
-  header.close,
-  .locations-list.close {
-    transform: translate(0, 0);
-    visibility: visible;
-  }
+
 }

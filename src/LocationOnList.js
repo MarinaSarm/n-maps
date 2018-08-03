@@ -1,27 +1,28 @@
 import React, { Component } from 'react'
+import './css/LocationOnList.css'
 
 class LocationOnList extends Component {
   /* function to indicate selected item in list and on map*/
   toggleHihglight = () => {
-    if (this.props.location.locationStyle.backgroundColor === 'yellow') {
+    if (this.props.location.locationStyle.backgroundColor === '#FFFF73') {
       this.props.updateInfoMarker(this.props.location.id, false, null)
-      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'}, false)
+      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: '#FFFF40'}, false)
       this.props.updateClick(this.props.location.id, false)
     } else {
       this.props.updateInfoMarker(this.props.location.id, true, 1)
-      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'}, true)
+      this.props.updateLocationStyle(this.props.location.id, {backgroundColor: '#FFFF73'}, true)
       this.props.updateClick(this.props.location.id, true)
     }
   }
   toggleHihglightByEnter = (event) => {
     if (event.key === 'Enter') {
       this.props.currentActive(event.target, this.refs.current)
-      if (this.props.location.locationStyle.backgroundColor === 'yellow') {
-        this.props.updateInfoMarker(this.props.location.id, false, null)
-        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'red'}, false)
+      if (this.props.location.locationStyle.backgroundColor === '#FFFF73') {
+        this.props.updateInfoMarker(this.props.location.id, false, null, true)
+        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: '#FFFF40'}, false)
       } else {
         this.props.updateInfoMarker(this.props.location.id, true, 1)
-        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: 'yellow'}, true)
+        this.props.updateLocationStyle(this.props.location.id, {backgroundColor: '#FFFF73'}, true)
       }
     }
   }

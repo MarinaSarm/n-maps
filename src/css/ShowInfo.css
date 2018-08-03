@@ -1,0 +1,14 @@
+.info-window {
+  width: 80vw;
+  background-color: rgba(255,255,115, 0.5);
+  color: #48036F;
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+@media only screen and (min-width: 800px) {
+  .info-window {
+    width: 40vw;
+  }
+}

@@ -51,11 +51,11 @@ class App extends Component {
       let markerTitle = location.name
       let markerId = location.id
       locationState.push({location: location, id: markerId, locationStyle: {
-        backgroundColor: 'red'
+        backgroundColor: '#FFFF40'
       }, checkOnMap: false})
       /* here store also info about infowindow setState
       */
-      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false})
+      markerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false, focus: false})
     })
     this.setState({locations: locationState, markers: markerState, showingLocations: locationState, showingMarkers: markerState})
 
@@ -77,7 +77,7 @@ class App extends Component {
             info['id'] = restaurant['id']
             info['location']['formatted_address'] = restaurant['location']['formattedAddress'].join(', ')
             info['location']['name'] = restaurant['name']
-            info['locationStyle'] = {backgroundColor: 'red'}
+            info['locationStyle'] = {backgroundColor: '#FFFF40'}
             info['checkOnMap'] = false
             return info
           })
@@ -86,7 +86,7 @@ class App extends Component {
             let markerLocation = location.location.geometry.location
             let markerTitle = location.location.name
             let markerId = location.id
-            newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false})
+            newMarkerState.push({position: markerLocation, title: markerTitle, id: markerId, info: false, animation: 2, click: false, focus: false})
           })
           this.setState({showingLocations: details, locations: details, markers: newMarkerState, showingMarkers: newMarkerState, foursquare: true})
         })
@@ -95,7 +95,6 @@ class App extends Component {
     function requestError(e, part) {
       console.log(e);
       alert(`There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!`)
-      // document.querySelector('#Error').insertAdjacentHTML('beforeend', `<p class="network-warning">There was an error ${part}. For more detailes see logs. You can check some preloaded restaurants!</p>`);
     }
   }
   /* this function for search functionality*/
@@ -103,11 +102,12 @@ class App extends Component {
     this.setState({showingLocations: showingLocations, showingMarkers: showingMarkers})
   }
   /* these 2 functions to stay in sinc between clicked marker and clicked list item*/
-  updateInfoMarker = (id, info, animation) => {
+  updateInfoMarker = (id, info, animation, focus) => {
     let newMarkers = this.state.showingMarkers.map((marker) => {
       if (marker.id === id) {
          marker.info = info
          marker.animation = animation
+         marker.focus = focus
       }
       return marker
     })
@@ -152,15 +152,10 @@ class App extends Component {
         <header>
           <h1>Discover Restaurants in Bremen!</h1>
         </header>
-        <button id="hamburger_open" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="List of restaurants" onClick={this.toggleChange}>
-        <span className="entypo-menu"></span>
-        </button>
-      {/*  <input type="checkbox" id="hamburger_open" onChange={this.toggleChange}/>
-        <label tabIndex={0} htmlFor="hamburger_open" className="list-toggle">
+        <button id="hamburger_open" type="button" aria-label="Open and close list of restaurants" onClick={this.toggleChange}>
           <span className="entypo-menu"></span>
-        </label>
-        */}
-        <div id="list" ref="list">
+        </button>
+        <div id="list" ref="list" className={this.state.check? "open": "close"}>
           <SearchPlace
             locations={this.state.locations}
             markers={this.state.markers}
@@ -181,7 +176,7 @@ class App extends Component {
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${this.keysAPI('GoogleMaps')}&v=3.exp&libraries=geometry,drawing,places`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%`, width: `100%` }} />}
-            mapElement={<div style={{ height: `90%` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
             showingMarkers={this.state.showingMarkers}
             showingLocations={this.state.showingLocations}
             showInfoToggle={this.showInfoToggle}

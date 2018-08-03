@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import { geocodeByAddress, geocodeByPlaceId, getLatLng } from 'react-places-autocomplete'
 import escapeRegExp from 'escape-string-regexp'
 import ListLocations from './ListLocations'
+import './css/SearchPlace.css'
 
 class SearchPlace extends Component {
   state = {
@@ -34,6 +35,11 @@ class SearchPlace extends Component {
     */
     this.props.updateShowingLocations(showingLocations, showingMarkers)
   }
+  clearQuery = () => {
+    this.setState({ query: '' })
+    this.updateQuery('')
+    this.refs.search.focus()
+  }
   render(){
     return(
       <div id="search">
@@ -43,10 +49,16 @@ class SearchPlace extends Component {
           value={this.state.query}
           onChange={(event) => this.updateQuery(event.target.value)}
           id="search-input"
+          ref="search"
+          aria-describedby="showing-restaurant"
+          aria-labelledby="Search"
         />
-        <label htmlFor="search-input" className="search-input">
-          Search
-        </label>
+        {this.props.showingLocations.length !== this.props.locations.length && (
+          <div id="showing-restaurants">
+            <span className="show-of-total">Now showing {this.props.showingLocations.length} of {this.props.locations.lengthh} total</span>
+            <button className="show-of-total" onClick={this.clearQuery}>Show all</button>
+          </div>
+        )}
         <ListLocations
           showingLocations={this.props.showingLocations}
           updateInfoMarker={this.props.updateInfoMarker}

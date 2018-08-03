@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './css/ShowInfo.css'
 
 class ShowInfo extends Component {
   state = {
@@ -32,9 +33,11 @@ class ShowInfo extends Component {
       alert(`There was an error ${part}. For more detailes see logs.`)
     }
     //this is a hack to get focus to opened infowindow for keyboard users
-    setTimeout(() => {this.refs.address.focus()}, 1000)
+    document.getElementById('list').className = 'close'
+    setTimeout(() => {this.nameInput.focus()}, 100)
   }
   componentWillUnmount(){
+    document.getElementById('list').className = 'open'
     if (this.props.focusedElement[1]) {
       this.props.focusedElement[1].focus()
     }
@@ -56,21 +59,21 @@ class ShowInfo extends Component {
   }
   render(){
     return(
-        <div>
+        <div tabIndex={0} ref={(input) => { this.nameInput = input; }} className="info-window">
           {this.props.showingLocations.filter((location) =>
             location.id === this.props.marker.id
           ).map((location) => (
             /* Show detailed info if available */
-              <div key={location.id} role="dialog" aria-labelledby={`${location.location.name}-for-map`}>
-                <h3 id={`${location.location.name}-for-map`}>{location.location.name}</h3>
-                <p tabIndex={0} ref="address" id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
+              <div key={location.id} role="dialog" aria-labelledby={`${location.location.name}-for-map`} className="info">
+                <h3 id={`${location.id}-for-map`}>{location.location.name}</h3>
+                <p id={`${location.location.name}-onmap`}>{location.location.formatted_address}</p>
                 {(location.location.rating) &&
                 <p>Rating: {location.location.rating}</p>}
                 {(this.props.foursquare) &&
                   <div>
                     <p>Details from Foursquare.com</p>
                     <figure>
-                      <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} />
+                      <img src={this.state.photo.imgSrc} alt={`${location.location.name} restaurant`} width="200px" height="300px"/>
                       {(this.state.photo.user) && (this.state.photo.user.firstName) && (this.state.photo.user.lastName) &&  (this.state.photo.source) && (this.state.photo.source.name) &&
                       <figcaption>{location.location.name} taken by {this.state.photo.user.firstName} {this.state.photo.user.lastName}. Got from {this.state.photo.source.name}</figcaption> }
                     </figure>
@@ -79,12 +82,6 @@ class ShowInfo extends Component {
                   <a onKeyDown={this.handleTab} onClick={this.props.closeInfo} href="#locations-list" ref="back">
                     back to list
                   </a>
-
-
-                {/*}<form action="#locations-list">
-                  <input type="submit" value="return to list" />
-                </form>
-                */}
               </div>
           ))}
         </div>
